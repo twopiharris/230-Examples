@@ -1,0 +1,55 @@
+<!doctype HTML>
+<html lang = "en-us">
+<head>
+  <meta charset = "utf-8">
+  <link rel = "stylesheet"
+        type = "text/css"
+        href = "http://www.cs.iupui.edu/~aharris/ajhStandard.css">
+
+</head>
+
+<body>
+
+<h1>Web Development with Python</h1>
+
+<h2>Python and the web server</h2>
+
+<ul>
+  <li><a href = 
+       "http://corsair.cs.iupui.edu:18011/cgi-bin/hiCGI.py">
+       hiCGI.py</a>
+       Hello world done in CGI and python</li>
+  <li><a href = 
+       "http://corsair.cs.iupui.edu:18011/hiCGI.py">
+       hiCGI.py</a>
+       Source of hiCGI</li>
+
+  <li><a href = 
+      "http://corsair.cs.iupui.edu:18011/askName.html">
+      askName.html</a>
+      HTML page that interacts with sayHi.py. View source to 
+      see how page is organized with form and inputs. 
+      (calls sayHi.py)</li>
+  <li><a href = 
+      "http://corsair.cs.iupui.edu:18011/sayHi.py">
+      source of sayHI.py</a>
+      Retrieves data from askName.html and reports it back.
+      (run by calling askName.html)</li>
+  <li><a href = 
+      "http://corsair.cs.iupui.edu:18011/cgi-bin/qAndA.py">
+      qAndA.py</a>
+      A program that creates its own form if necessary</li>
+  <li><a href = 
+      "http://corsair.cs.iupui.edu:18011/qAndA.py">
+      qAndA.py</a>
+      Source of qAndA.py</li>
+  <li><a href = "dvd.db">dvd.db</a>
+      The SQLite database used in previous examples. Used to
+      demonstrate cgi and sql combined</li>
+
+  <li><a href = "http://cs.iupui.edu/~aharris/n343/dvd.sql">dvd.sql</a>
+      SQLite code for a DVD datavbase</li>
+
+  <li><a href = "http://corsair.cs.iupui.edu:18011/cgi-bin/CGI_DB.py">CGI_DB.py</a>
+      Use a cgi script to interact with an SQL database</li>
+</ul>

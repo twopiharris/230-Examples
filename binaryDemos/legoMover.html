@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>Lego Mover</title>
+<!-- import gamelib modules -->
+
+<script src = "gamelib_core.js"></script>
+<script src = "gamelib_mouse.js"></script>
+<script src = "gamelib_sprites.js"></script>
+
+<script>
+
+  var theMouse;
+  var brick = new Array(4);
+  var table;
+  var lyrValue;
+function init(){
+
+  //initialize mouse
+  theMouse = Ms_initmouse();
+
+  //set up sprites
+
+  table = new Sp_Sprite();
+  table.setImage("table.gif", 800, 200, 1, 1);
+  table.setXlimits(0,900);
+  table.setYlimits(0,800);
+  table.moveTo(50,50);
+  table.setFrame(0);
+  table.setAnimation(0);
+  table.setCollide(true);
+  table.switchOn();
+
+  for (brickNum = 1; brickNum <=5; brickNum++){
+    brick[brickNum] = new Sp_Sprite();
+    brick[brickNum].setImage("lego.gif", 165, 100, 1, 5);
+    brick[brickNum].setXlimits(0, 800);
+    brick[brickNum].setYlimits(0, 800);
+    brick[brickNum].moveTo((5 - brickNum-1) * 200, 400);
+    brick[brickNum].setFrame(0);
+    brick[brickNum].setAnimation(brickNum);
+    brick[brickNum].switchOn();
+    brick[brickNum].makeDraggable();
+    brick[brickNum].setCollide(true);
+    brick[brickNum].onclickup = "countEm()";
+  } // end for loop
+
+  //set up layers
+  lyrValue = new 
+  Gl_layer(100, 10, 450, "<font color = white size = 7>0</font>");
+  lyrValue.show();
+  lyrValue.makeDraggable();
+
+  Gl_start();
+
+} // end init
+
+function countEm(){
+  var total = 0;
+  if (brick[1].hasHit(table)){
+    total += 1;
+  } // end if
+
+  if (brick[2].hasHit(table)){
+    total += 2;
+  } // end if
+
+  if (brick[3].hasHit(table)){
+    total += 4;
+  } // end if
+
+  if (brick[4].hasHit(table)){
+    total += 8;
+  } // end if
+
+  display(total);
+
+} // end countEm
+
+function display(total){
+  // shows the current total count
+  var output = "";
+  output += "<font color = white size = 7>";
+  output += total;
+  output += "</font>"; 
+  lyrValue.write(output);
+} // end display
+</script>
+
+</head>
+
+<body bgColor = "black"
+      onload = "init()">
+<font color = "White">
+<center>
+<h1>Brick Counter</h1>
+</center>
+
+</font>
+</body>
+</html>

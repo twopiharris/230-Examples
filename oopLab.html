@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+    <title>OOP Lab</title>
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "http://www.cs.iupui.edu/~aharris/ajhStandard.css" />
+
+  <style type = "text/css">
+    pre {
+      background-color: white;
+      border: 3px black double;
+    }
+  </style>
+  </head>
+
+  <body>
+    <h1>OOP Lab</h1>
+    
+    <h2>Overview</h2>
+    <p>
+      The purpose of this lab is to give you practice creating your own object.
+      You will be given a class that expects an instance of the (yet undefined)
+      Rectangle object. 
+    </p>  
+    
+    <p>
+      Your job is to determine what attributes and methods the Rectangle class
+      requires and create a class that will satisfy the requirements.
+    </p>
+    
+    <h2>The RecDemo Class</h2>
+    <p>
+      You can begin with this RecDemo class:
+    </p>
+    
+    <pre>
+// Use this class to test your own Rectangle class
+
+public class RecDemo {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// You can't substantially change this code.
+		// Write your Rectangle class so the following
+		// code will work correctly.
+		
+		Rectangle myRec;
+		
+		myRec = new Rectangle(5d, 3d);
+		System.out.println(myRec.getValues());
+		
+		myRec = new Rectangle();
+		System.out.println(myRec.getValues());
+		
+		myRec = new Rectangle(Rectangle.SMALL);
+		System.out.println(myRec.getValues());
+		
+		myRec = new Rectangle(Rectangle.MEDIUM);
+		System.out.println(myRec.getValues());
+		
+		myRec = new Rectangle(Rectangle.LARGE);
+		System.out.println(myRec.getValues());
+
+		System.out.println(Rectangle.calcPerimeter(5d, 6d));
+		System.out.println(Rectangle.calcArea(5d, 6d));
+		
+	} // end main
+
+} // end RecDemo
+    </pre>
+    
+    <p>
+      Please begin by copying this code into your editor, then creating a 
+      Rectangle class that can satisfy the requirements.
+    </p>
+    
+    <h2>Expected Output</h2>
+    <p>
+      When the Rectangle class has been properly created, the output should look like the
+      following:
+    </p>
+    
+    <pre>
+width: 5.0, height: 3.0, area: 15.0, perimeter: 16.0
+width: 5.0, height: 10.0, area: 50.0, perimeter: 30.0
+width: 2.0, height: 3.0, area: 6.0, perimeter: 10.0
+width: 5.0, height: 10.0, area: 50.0, perimeter: 30.0
+width: 10.0, height: 15.0, area: 150.0, perimeter: 50.0
+22.0
+30.0
+    </pre>
+    
+    <h2>Tips</h2>
+    <ul>
+      <li>Comment out most of the lines of RecDemo except the first couple.</li>
+      <li>Write a part of the Rectangle code</li>
+      <li>Test the code against the RecDeom</li>
+      <li>Comment out a few more lines and repeat</li>
+      <li>Your Class will probably have some constants and some static methods</li>
+    </ul>
+    
+    <h2>Blackbelt Challenge</h2>
+    <p>
+      Add a Graphic Interface to the project. Use labels to print out all the output.  
+      Additionally, add text fields for height and width, and calculate the area and
+      perimeter using your class.
+    </p>
+  </body>
+  
+</html>

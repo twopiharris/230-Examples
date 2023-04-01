@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<!--Copyright 101Computing.net -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-24638485-49"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-24638485-49');
+</script>
+  <meta charset="UTF-8">
+  <title>Little Man Computer - LMC/CPU Simulator</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+<!-- Copyright 101computing.net -->
+<H1>Little Man Computer (LMC) CPU Simulator</H1>
+<div id="codeWrapper">
+    Program<br/>
+      <button class="myButton" onclick="load();">Load Program in RAM</button>
+    <button class="myButtonRed" onclick="load(); run();">Run Program</button>
+    <div id="code">
+    <textarea id="codeListing" rows=20 cols=28  wrap="off" >
+        INP
+loop    OUT   
+        STA count
+        SUB one
+        STA count
+        BRP loop
+        HLT
+		
+one     DAT 1
+count   DAT      
+    </textarea>
+    </div>
+  <!--
+  temporarily disabled - AJH
+  <select id=files>
+    <option value="1">Adding 2 inputs</option>
+    <option value="2">Max of 2 inputs</option>
+    <option value="3" selected>Count down timer</option>
+    <option value="4">Multiplying 2 inputs</option>
+    <option value="5">Triangular Numbers</option>
+    <option value="6">Factorial of...</option>
+	<option value="7">Indirect Addressing</option>
+  </select>
+  <button class="myButton" style="float: right;" onclick="selectProgram();">Load Program</button>
+  -->
+</div>  
+  
+<div id=CPUWrapper>
+  Central Processing Unit
+  <div id="CPU">
+    Program Counter: <input type="text" id="pc" value="00">&nbsp;<button class="myButtonRed" style="float: right; padding:6px 10px;" onclick="step();" title="Run next FDE Cycle/instruction"><i class="fa fa-step-forward"></i></button><button class="myButtonRed" style="float: right; padding:6px 8px; margin-right:4px;" onclick="pause();" id="pausebtn" title="Run/Pause"><i class="fa fa-play"></i></button><br/>
+    MAR: <input type="text" id="mar" value="00"> -  MDR: <input type="text" id="mdr" value="00"><br/>
+	CIR:  <input type="text" id="cir" value="00"><br/>
+    Accumulator:  <input type="text" id="acc" value="00"><br/>
+    <br/>Clock Speed:<br/>
+     <input type="range" id="clock" min="10" max="200">
+  </div>
+  <div id="inputOutputWrapper">
+    <br/>
+    <div style="float:left; margin-right: 10px;">Input:<br/> <textarea type="text" id="input" cols=5 rows=8></textarea></div><div style="float:left;">Output:<br/> <textarea type="text" id="output" cols=5 rows=8></textarea></div>
+  </div>
+  <center><button class="myButton"  onclick="document.getElementById('linkPopup').style.display = 'block';" style="margin-top: 10px;">LMC Lookup Table</button>
+  <button class="myButton"  onclick="document.getElementById('linkPopup2').style.display = 'block';" style="margin-top: 10px;">About this LMC Simulator</button></center>
+</div>
+<DIV id=RAMWrapper>
+  Random Access Memory
+<table id=RAM>
+  <tr>
+    <td>00<input id=cell_0 type=text value="000"></td>
+    <td>01<input id=cell_1 type=text value="000"></td>
+    <td>02<input id=cell_2 type=text value="000"></td>
+    <td>03<input id=cell_3 type=text value="000"></td>
+    <td>04<input id=cell_4 type=text value="000"></td>
+    <td>05<input id=cell_5 type=text value="000"></td>
+    <td>06<input id=cell_6 type=text value="000"></td>
+    <td>07<input id=cell_7 type=text value="000"></td>
+    <td>08<input id=cell_8 type=text value="000"></td>
+    <td>09<input id=cell_9 type=text value="000"></td>
+  </tr>
+  <tr>
+    <td>10<input id=cell_10 type=text value="000"></td>
+    <td>11<input id=cell_11 type=text value="000"></td>
+    <td>12<input id=cell_12 type=text value="000"></td>
+    <td>13<input id=cell_13 type=text value="000"></td>
+    <td>14<input id=cell_14 type=text value="000"></td>
+    <td>15<input id=cell_15 type=text value="000"></td>
+    <td>16<input id=cell_16 type=text value="000"></td>
+    <td>17<input id=cell_17 type=text value="000"></td>
+    <td>18<input id=cell_18 type=text value="000"></td>
+    <td>19<input id=cell_19 type=text value="000"></td>
+  </tr>
+  <tr>
+    <td>20<input id=cell_20 type=text value="000"></td>
+    <td>21<input id=cell_21 type=text value="000"></td>
+    <td>22<input id=cell_22 type=text value="000"></td>
+    <td>23<input id=cell_23 type=text value="000"></td>
+    <td>24<input id=cell_24 type=text value="000"></td>
+    <td>25<input id=cell_25 type=text value="000"></td>
+    <td>26<input id=cell_26 type=text value="000"></td>
+    <td>27<input id=cell_27 type=text value="000"></td>
+    <td>28<input id=cell_28 type=text value="000"></td>
+    <td>29<input id=cell_29 type=text value="000"></td>
+  </tr>
+  <tr>
+    <td>30<input id=cell_30 type=text value="000"></td>
+    <td>31<input id=cell_31 type=text value="000"></td>
+    <td>32<input id=cell_32 type=text value="000"></td>
+    <td>33<input id=cell_33 type=text value="000"></td>
+    <td>34<input id=cell_34 type=text value="000"></td>
+    <td>35<input id=cell_35 type=text value="000"></td>
+    <td>36<input id=cell_36 type=text value="000"></td>
+    <td>37<input id=cell_37 type=text value="000"></td>
+    <td>38<input id=cell_38 type=text value="000"></td>
+    <td>39<input id=cell_39 type=text value="000"></td>
+  </tr>
+  <tr>
+    <td>40<input id=cell_40 type=text value="000"></td>
+    <td>41<input id=cell_41 type=text value="000"></td>
+    <td>42<input id=cell_42 type=text value="000"></td>
+    <td>43<input id=cell_43 type=text value="000"></td>
+    <td>44<input id=cell_44 type=text value="000"></td>
+    <td>45<input id=cell_45 type=text value="000"></td>
+    <td>46<input id=cell_46 type=text value="000"></td>
+    <td>47<input id=cell_47 type=text value="000"></td>
+    <td>48<input id=cell_48 type=text value="000"></td>
+    <td>49<input id=cell_49 type=text value="000"></td>
+  </tr>
+  <tr>
+    <td>50<input id=cell_50 type=text value="000"></td>
+    <td>51<input id=cell_51 type=text value="000"></td>
+    <td>52<input id=cell_52 type=text value="000"></td>
+    <td>53<input id=cell_53 type=text value="000"></td>
+    <td>54<input id=cell_54 type=text value="000"></td>
+    <td>55<input id=cell_55 type=text value="000"></td>
+    <td>56<input id=cell_56 type=text value="000"></td>
+    <td>57<input id=cell_57 type=text value="000"></td>
+    <td>58<input id=cell_58 type=text value="000"></td>
+    <td>59<input id=cell_59 type=text value="000"></td>
+  </tr>
+  <tr>
+    <td>60<input id=cell_60 type=text value="000"></td>
+    <td>61<input id=cell_61 type=text value="000"></td>
+    <td>62<input id=cell_62 type=text value="000"></td>
+    <td>63<input id=cell_63 type=text value="000"></td>
+    <td>64<input id=cell_64 type=text value="000"></td>
+    <td>65<input id=cell_65 type=text value="000"></td>
+    <td>66<input id=cell_66 type=text value="000"></td>
+    <td>67<input id=cell_67 type=text value="000"></td>
+    <td>68<input id=cell_68 type=text value="000"></td>
+    <td>69<input id=cell_69 type=text value="000"></td>
+  </tr>
+  <tr>
+    <td>70<input id=cell_70 type=text value="000"></td>
+    <td>71<input id=cell_71 type=text value="000"></td>
+    <td>72<input id=cell_72 type=text value="000"></td>
+    <td>73<input id=cell_73 type=text value="000"></td>
+    <td>74<input id=cell_74 type=text value="000"></td>
+    <td>75<input id=cell_75 type=text value="000"></td>
+    <td>76<input id=cell_76 type=text value="000"></td>
+    <td>77<input id=cell_77 type=text value="000"></td>
+    <td>78<input id=cell_78 type=text value="000"></td>
+    <td>79<input id=cell_79 type=text value="000"></td>
+  </tr>
+  <tr>
+    <td>80<input id=cell_80 type=text value="000"></td>
+    <td>81<input id=cell_81 type=text value="000"></td>
+    <td>82<input id=cell_82 type=text value="000"></td>
+    <td>83<input id=cell_83 type=text value="000"></td>
+    <td>84<input id=cell_84 type=text value="000"></td>
+    <td>85<input id=cell_85 type=text value="000"></td>
+    <td>86<input id=cell_86 type=text value="000"></td>
+    <td>87<input id=cell_87 type=text value="000"></td>
+    <td>88<input id=cell_88 type=text value="000"></td>
+    <td>89<input id=cell_89 type=text value="000"></td>
+  </tr>
+  <tr>
+    <td>90<input id=cell_90 type=text value="000"></td>
+    <td>91<input id=cell_91 type=text value="000"></td>
+    <td>92<input id=cell_92 type=text value="000"></td>
+    <td>93<input id=cell_93 type=text value="000"></td>
+    <td>94<input id=cell_94 type=text value="000"></td>
+    <td>95<input id=cell_95 type=text value="000"></td>
+    <td>96<input id=cell_96 type=text value="000"></td>
+    <td>97<input id=cell_97 type=text value="000"></td>
+    <td>98<input id=cell_98 type=text value="000"></td>
+    <td>99<input id=cell_99 type=text value="000"></td>
+  </tr>
+</table>  
+</DIV>
+<div id="logWrapper">
+  Current FDE Cycle
+  <div id="liveFeed">
+  </div>
+  Log File: <input type=checkbox id="logFile" name="logFile" checked onclick="JavaScript:switchLogFile();" style="cursor:pointer;"><label for="logFile" style="cursor:pointer;">On/Off</label>
+  <div id="log">
+  </div>
+</div>  
+<div id="footer">LMC Simulator - Inside the CPU - FDE Cycle - <a href="https://www.101computing.net" target="_blank">&copy; 101Computing.net</a></div>
+<div id="linkPopup2">
+  <span class="close"><A href="#" onclick="Javascript: document.getElementById('linkPopup2').style.display = 'none'; return False;">X Close</A></span>
+<H4>About this LMC/CPU Simulator</H4>
+ <p>This LMC simulator is based on the Little Man Computer (LMC) model of a computer, created by Dr. Stuart Madnick in 1965. LMC is generally used for educational purposes as it models a simple Von Neumann architecture computer which has all of the basic features of a modern computer. It is programmed using assembly code. You can find out more about this model on this <a href="https://en.wikipedia.org/wiki/Little_man_computer" target="_blank">wikipedia page</a>. </p>
+ <p>You can read more about this LMC simulator on <a href="https://www.101computing.net/lmc-simulator/" target="_blank">101Computing.net</a>.</p>
+  <p><a href="https://www.101computing.net" target="_blank">&copy 101Computing.net</a>
+</div>    
+<div id="linkPopup">
+  <span class="close"><A href="#" onclick="Javascript: document.getElementById('linkPopup').style.display = 'none'; return False;">X Close</A></span>
+<H4>LMC Instruction Set</H4>
+<p><em>Note that in the following table &#8220;xx&#8221; refers to a memory address (aka mailbox) in the RAM. The online LMC simulator has 100 different mailboxes in the RAM ranging from 00 to 99.</em></p>
+<table class="alternateTable">
+<tr>
+<td><b>Mnemonic</b></td>
+<td><b>Name</b></td>
+<td><b>Description</b></td>
+<td><b>Op Code</b></td>
+</tr>
+<tr>
+<td>INP</td>
+<td>INPUT</td>
+<td>Retrieve user input and stores it in the accumulator.</td>
+<td>901</td>
+</tr>
+<tr>
+<td>OUT</td>
+<td>OUTPUT</td>
+<td>Output the value stored in the accumulator.</td>
+<td>902</td>
+</tr>
+<tr>
+<td>LDA</td>
+<td>LOAD</td>
+<td>Load the Accumulator with the contents of the memory address given.</td>
+<td>5xx</td>
+</tr>
+<tr>
+<td>STA</td>
+<td>STORE</td>
+<td>Store the value in the Accumulator in the memory address given.</td>
+<td>3xx</td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>ADD</td>
+<td>Add the contents of the memory address to the Accumulator</td>
+<td>1xx</td>
+</tr>
+<tr>
+<td>SUB</td>
+<td>SUBTRACT</td>
+<td>Subtract the contents of the memory address from the Accumulator </td>
+<td>2xx</td>
+</tr>
+<tr>
+<td>BRP</td>
+<td>BRANCH IF POSITIVE</td>
+<td>Branch/Jump to the address given if the Accumulator is zero or positive.</td>
+<td>8xx</td>
+</tr>
+<tr>
+<td>BRZ</td>
+<td>BRANCH IF ZERO</td>
+<td>Branch/Jump to the address given if the Accumulator is zero.</td>
+<td>7xx</td>
+</tr>
+<tr>
+<td>BRA</td>
+<td>BRANCH ALWAYS</td>
+<td>Branch/Jump to the address given.</td>
+<td>6xx</td>
+</tr>
+<tr>
+<td>HLT</td>
+<td>HALT</td>
+<td>Stop the code</td>
+<td>000</td>
+</tr>
+<tr>
+<td>DAT</td>
+<td>DATA LOCATION</td>
+<td>Used to associate a label to a free memory address. An optional value can also be used to be stored at the memory address.</td>
+<td></td>
+</tr>
+</table>
+
+</div>
+
+<div style="display: none;">
+<textarea id="code1">
+      INP
+      STA num1      
+      INP     
+      ADD num1
+      OUT
+      HLT
+	  
+num1  DAT
+  </textarea>
+<textarea id="code2">
+      INP
+      STA num1     
+      INP
+      STA num2
+      SUB num1
+      BRP pos
+      LDA num1
+      OUT
+      BRA exit
+pos   LDA num2
+      OUT
+exit  HLT
+
+num1  DAT
+num2  DAT  
+  </textarea>
+ <textarea id="code3">
+        INP
+loop    OUT
+        STA count
+        SUB one
+        STA count
+        BRP loop
+        HLT
+		
+one     DAT 1
+count   DAT 
+  </textarea>
+ <textarea id="code4">
+        INP
+        STA NUM1
+        INP 
+        STA NUM2
+LOOP    LDA TOTAL
+        ADD NUM1
+        STA TOTAL
+        LDA NUM2
+        SUB ONE
+        STA NUM2
+        BRP LOOP
+        LDA TOTAL
+        SUB NUM1
+        STA TOTAL
+        OUT
+        HLT
+		
+NUM1    DAT
+NUM2    DAT
+ONE     DAT 1
+TOTAL   DAT 0
+  </textarea>
+<textarea id="code5">
+loop    LDA number
+        ADD counter
+        OUT
+        STA number
+        LDA counter
+        ADD one
+        STA counter
+        LDA ten
+        SUB counter
+        BRP loop
+        HLT
+		
+counter DAT 1
+number  DAT 0
+one     DAT 1
+ten     DAT 10
+  </textarea>
+<textarea id="code6">
+          INP 
+          STA final 
+          BRZ oneval
+          SUB one
+          STA iteration
+          STA counter
+          LDA final
+          STA num
+mult      LDA iteration
+          BRZ end
+          SUB one
+          BRZ end
+          LDA final
+          ADD num
+          STA final
+          LDA counter
+          SUB one
+          STA counter
+          SUB one
+          BRZ next
+          BRA mult
+next      LDA final
+          STA num 
+          LDA iteration
+          SUB one
+          STA iteration
+          STA counter
+          SUB one
+          BRZ end
+          BRA mult
+end       LDA final
+          OUT
+          HLT
+oneval    LDA one
+          OUT
+          HLT
+		  
+final     DAT 0
+counter   DAT 0
+one       DAT 1
+iteration DAT 0
+num       DAT 0
+  </textarea>
+<textarea id="code7">
+        INP
+loop	STA count 
+        STA @address
+        LDA address
+        SUB one
+        STA address
+        LDA count
+        SUB one
+        BRP loop
+        HLT
+		
+count   DAT
+one 	DAT 1 
+address DAT 99
+</textarea>
+</div>
+<!-- partial -->
+  <script  src="./script-indirect.js"></script>
+
+</body>
+</html>

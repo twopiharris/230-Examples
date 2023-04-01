@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+<head>
+  <title>Algorithm summary</title>
+  <meta charset = "utf-8">
+  <style type = "text/css">
+    table, th, td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Algorithm Summary</h1>
+
+  <table>
+    <tr>
+      <th>concept</th>
+      <th>parameters</th>
+      <th>algorithm</th>
+      <th>python</th>
+    </tr>
+
+    <tr>
+      <td rowSpan = "3">New Variable</td>
+      <td><em>name</em>: what to call it</td>
+      <td rowSpan = "3">create a variable called 
+          <em>name</em> of type 
+          <em>type</em>
+          with initial value <em>initVal</em>
+      </td>
+      <td rowSpan = "3"><pre>
+<em>name initVal</em></pre></td>
+    </tr>
+
+    <tr>
+      <td><em>type</em>: type of data</td>
+    </tr>
+
+    <tr>
+      <td><em>initVal</em>: starting value</td>
+    </tr>
+
+    <tr>
+      <td>output</td>
+      <td><em>message</em>: text to write</td>
+      <td>output the text <em>message</em></td>
+      <td><pre>print(<em>message</em>)</pre></td>
+    </tr>
+
+    <tr>
+      <td rowSpan = "2">input</td>
+      <td><em>variable</em>: where answer will be stored</td>
+      <td rowSpan = "2">ask the user <em>message</em> and 
+          store result in <variable></td>
+      <td rowSpan = "2"><pre>
+<em>variable</em> = input("<em>message</em>")</pre></td>
+    </tr>
+
+    <tr>
+      <td><em>message</em>: question being asked</td>
+    </tr>
+
+    <tr>
+      <td rowSpan = "2">Convert to integer</td>
+      <td><em>oldVariable</em>: in a non-integer format</td>
+      <td rowSpan = "2">convert <em>oldVariable</em> to integer 
+          and store in <em>intVariable</em></td>
+      <td rowSpan = "2"><pre>
+<em>intVariable</em> = int(<em>oldVariable</em>)</pre></td>
+    </tr>
+
+    <tr>
+      <td><em>intVariable</em>: integer to hold results</td>
+    </tr>
+    
+    <tr>
+      <td rowSpan = "2">branch</td>
+      <td><em>condition</em>: true / false value</td>
+      <td rowSpan = "2">if <em>condition</em> is true, execute
+          <em>code</em></td>
+      <td rowSpan = "2"><pre>
+if <em>condition</em>:
+  <em>code</em></pre></td>
+    </tr>
+
+    <tr>
+      <td><em>code</em>: one or more lines of grouped code</td>
+    </tr>
+
+    <tr>
+      <td rowSpan = "4">for loop</td>
+      <td><em>sentry</em> - integer variable to control loop</td>
+      <td rowSpan = "4">begin with <em>sentry</em> at <em>start</em> and 
+          add <em>change</em> to sentry on each pass until
+          <em>sentry</em> is larger than or equal to <em>finish</em></td>
+      <td rowSpan = "4"><pre>
+for <em>sentry</em> in range(<em>start</em>, <em>finish</em>, <em>change</em>):
+  <em>code to repeat</em>
+</pre></td>
+    </tr>
+
+    <tr>
+      <td><em>start</em> - integer starting value</td>
+    </tr>
+
+    <tr>
+      <td><em>finish</em> - integer ending value</td>
+    </tr>
+
+    <tr>
+      <td><em>change</em> - integer to add each pass</td>
+    </tr>
+
+    <tr>
+      <td rowSpan = "4">while loop</td>
+      <td><em>sentry</em> - variable to control loop</td>
+      <td rowSpan = "4">initialize sentry with <em>initialization code</em> then continue
+          loop as long as <em>condition</em> is true. Inside loop, 
+          change <em>sentry</em> with <em>change code</em></td>
+      <td rowSpan = "4"><pre>
+<em>initialization code</em>
+while (<em>condition</em>):
+  <em>code to repeat</em>
+  <em>change code</em></pre>
+</td>
+    </tr>
+
+    <tr>
+      <td><em>initialization code</em> - code to initialize sentry</td>
+    </tr>
+
+    <tr>
+      <td><em>condition</em> - loop will repeat if condition is true</td>
+    </tr>
+
+    <tr>
+      <td><em>change code</em> - code to change sentry so condition can become true</td>
+    </tr>
+
+    <tr>
+      <td rowSpan = "3">function</td>
+      <td><em>functionName</em> - the name of the function</td>
+      <td rowSpan = "3">create a function called <em>functionName</em> passing the values
+          <em>parameters</em> that returns a value of <em>return type</em></td>
+      <td rowSpan = "3"><pre>
+def <em>functionName</em>():
+  <em>code</em>
+  return <em>something</em></pre></td>
+    </tr>
+
+    <tr>
+      <td><em>return type</em>- type of data function returns. Could be nothing</td>
+    </tr>
+
+    <tr>
+      <td><em>parameters</em> - one or more values to send to the function</td>
+    </tr>
+
+<!--
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+-->
+  </table>
+
+
+

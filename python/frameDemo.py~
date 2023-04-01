@@ -1,0 +1,27 @@
+""" frameDemo.py 
+    illustrates swapping out frames
+    for a more complex ui
+"""
+from Tkinter import *
+
+
+class App(Tk):
+  def __init__(self):
+    Tk.__init__(self)
+    
+    self.frmMain = Frame(self)
+    self.frmMain.grid(row = 0, column = 0, rowspan = 4, columnspan = 2)
+    Label(self.frmMain, text = "main frame").grid()
+
+    self.btnMain = Button(self, text = "main", command = self.showMain)
+    self.btnMain.grid(row = 4, column = 0)
+
+  def showMain(self):
+    print "showing main panel"
+
+def main():
+  a = App()
+
+if __name__ == "__main__":
+  main()
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+  <title>grid demo</title>
+  <meta charset = "utf-8">
+  <style type = "text/css">
+    #all {
+      width: 600px;
+      background-color: pink;
+      display: grid;
+      grid-template-rows: 10% 80% 10%;
+      grid-template-columns: 20% 80%%;
+    }
+
+    header {
+      background-color: yellow;
+      grid-column: 1 / 3;
+    }  
+
+    nav {
+      background-color: lightgreen;
+      grid-column: 1;
+    } 
+
+    form {
+      background-color: lightblue;
+      grid-column: 2;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+
+    label {
+      grid-column: 1;
+    }
+
+    input {
+      grid-column: 2;
+    } 
+
+    footer {
+      background-color: orange;
+      grid-column: 1/3;
+    }
+    
+  </style>
+    
+</head>
+
+<body>
+  <div id = "all">
+	  <header>
+	    <h1>Header</h1>
+	  </header>
+
+	  <nav>
+	    <ul>
+	      <li>Navigation</li>
+	      <li>Menu</li>
+	    </ul>
+	  </nav>
+	  
+	  <div id = "main">
+	    <h2>Main area</h2>
+            <form>
+              <fieldset>
+                <label>Name</label>
+                <input type = "text"/>
+
+                <label>Phone</label>
+                <input type = "text"/>
+
+                <label>Email</label>
+                <input type = "text"
+
+                <button type = "button">
+                  button
+                </button>                
+
+	  </div>
+
+	  <footer>
+	    <p>this is the footer</p>
+	  </footer>
+  </div>
+<body>
+</html>
+

@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class ByVal{
+    public static void main(String[] args){
+	int regInt = 5;
+	Integer wrappedInt = new Integer(5);
+
+	addVals(regInt, wrappedInt);
+
+	System.out.println("after function: reg: " + regInt + "wrapped: " + wrappedInt);
+    } // end main
+
+    function addVals(int regInt, Integer wrappedInt){
+	regInt++;
+
+	wrappedInt++;
+    } // end addVals
+} // end class def

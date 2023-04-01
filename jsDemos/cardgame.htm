@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Card Game</title>
+	<meta charset = "UTF-8" />
+	<script type = "text/javascript">
+	
+	/*   NOTE TO STUDENTS
+     *   This code is an example for a homework assignment
+     *   it is written in JavaScript, which is NOT the same
+     *   language you are using.  If you turn in this code,
+     *
+     *   A)  It will not work
+     *   B)  We will know you are being dishonest
+     *
+     *   It's OK to use this code as a starting place,
+     *   but it's definitely easier to do it the way we ask in
+     *   class.
+     *   
+     *   I've deliberately not put the comments in here that
+     *   normally go in my code. I want you to try to do that
+     *   part yourself.
+     *
+     *   I've also not used meaningful variable names, to
+     *   discourage you from using this code yourself.
+     *   
+     *   Please see me or a recitation leader if you're
+     *   struggling...
+     *
+     *
+     *   -Andy
+     */
+     
+	var A = ['hearts', 'diamonds', 'spades', 'clubs'];
+	var B = ['two','three','four','five','six','seven','eight','nine','ten','jack','queen', 'king', 'ace'];
+	var C = ['deck', 'player', 'computer'];
+	var D = [52];
+    for (var i = 0; i < 52; i++) {
+    	D[i] = 0;
+    }//end for
+		
+	function function1() {     	
+     	for (var i = 0; i < 52; i++){
+     		var E = Math.floor(i / 13);
+     		var F = i % 13; 
+     		var G = A[E];
+     		var H = B[F];		
+     		var x = document.getElementById("output");
+     		x.innerHTML += i + ", " + H + " of " + G + ", ";
+     		if (D[i] == 0) {
+     			x.innerHTML += C[0] + "<br/>\n";
+     		}//end if
+     		else if (D[i] == 1) {
+     			x.innerHTML += C[1] + "<br/>\n";
+     		}//end else if
+     		else if (D[i] == 2) {
+     			x.innerHTML += C[2] + "<br/>\n";
+     		}//end else if
+     	}//end for
+   	}//end function1
+     	
+	function function2(player) {
+     	var I = true;
+		while (I) {
+    		var J = (Math.floor(Math.random() * (51 - 0)) + 0);
+    		if (D[J] == 0) {
+    			var E = Math.floor(J / 13);
+    			var G = A[E];
+    			var F = J % 13;  
+    			var H = B[F]; 
+    	 		D[J] = player;
+    	 		I = false;
+    	 	}//end if
+    		else {
+    			I = true;	
+    	 	}//end else
+    	}//end for loop
+	}//end function2 
+	
+	function function3(player) {
+		var x = document.getElementById("output");
+		if (player == 1) {
+     		x.innerHTML +=  "<br/>\n" + "Player's Hand..." + "<br/>\n";
+     	}//end if
+     	else if (player == 2) {
+     		x.innerHTML += "<br/>\n" + "Computer's Hand..." + "<br/>\n";
+     	}//end else if
+     	for (var i = 0; i < 52; i++) {
+     		if (D[i] == player) {
+     			var E = Math.floor(i / 13);
+     			var G = A[E];
+     			var F = i % 13;
+     			var H = B[F];
+     			var x = document.getElementById("output");
+    	 		x.innerHTML += H + " of " + G + "<br/>\n";
+     		}//end if
+     	}//end for
+    }//end function3
+    
+    function function4() {
+    	for (var i = 0; i < 52; i++) {
+    		D[i] = 0;
+    	}//end for
+    }//end function4
+	
+	function main(){
+		var v = document.getElementById("sample");
+		v.innerHTML = "Sample Run" + "<br/>\n";
+		var x = document.getElementById("output");
+		x.innerHTML = "";
+     	for (var i = 0; i < 5; i++) {
+     		function2(1);
+     		function2(2);
+     	}//end for loop
+        function1();
+		function3(1);
+		function3(2);
+		function4();
+	}//end main
+
+	</script>
+</head>
+<body>
+	<h1>Card Game</h1>
+	
+	<button type = "button" onclick = "main()">begin</button>	
+	
+	<p>
+    Press the button to see an example of the card game assignment.
+    This example will work much like the one in class but it is written
+    in a different language.
+	</p>
+  
+	<p>
+    Note that in JavaScript, we're using dialog boxes for input and
+    output because this is not a command-line driven language (at
+    least not in the way it's being used here).  Your code does NOT
+    need to use pop-up dialogs.  Command-line I/O is fine.
+	</p>
+  
+	<p>
+    Please try to build this algorithm on your own. I know it is
+    not difficult to see actual JavaScript code, but I have written
+    this example in a far more obtuse style than I normally use.
+    It will be far easier to build this algorithm up and then implement
+    in Python than it will be to reverse engineer my JS code.
+	</p>
+	
+	<h2 id = "sample"></h2>
+
+	<div id = "output"></div>
+</body>
+</html>
+

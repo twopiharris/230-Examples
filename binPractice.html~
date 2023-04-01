@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+    <title>Binary Practice</title>
+    <script type = "text/javascript">
+      //global references
+      var decVal = 0;
+      var binVal = 0;
+      var octVal = 0;
+      var hexVal = 0;
+
+      function getNums(){
+        //generate random numbers in four formats
+        //decimal, binary, octal, hex
+       
+        //generate random value in base 10, convert to 
+        //other bases
+        decVal = Math.floor(Math.random() * 256)
+        binVal = decVal.toString(2);
+        octVal = decVal.toString(8);
+        hexVal = decVal.toString(16);
+        
+        //extract data from form
+        txtDec = document.getElementById("txtDec");
+        txtBin = document.getElementById("txtBin");
+        txtOct = document.getElementById("txtOct");
+        txtHex = document.getElementById("txtHex");
+
+        showDec = document.getElementById("chkDec").checked;
+        showBin = document.getElementById("chkBin").checked;
+        showOct = document.getElementById("chkOct").checked;
+        showHex = document.getElementById("chkHex").checked;
+
+        //display generated value if requested
+        if (showDec){
+          txtDec.value = decVal;
+        } else {
+          txtDec.value = "";
+        }
+        if (showBin){
+          txtBin.value = binVal;
+        } else {
+          txtBin.value = "";
+        }
+        if (showOct){
+          txtOct.value = octVal;
+        } else {
+          txtOct.value = ""
+        }
+        if (showHex){
+          txtHex.value = hexVal;
+        } else {
+          txtHex.value = "";
+        }      
+      } // end function
+      
+      function checkResponses(){
+        //compares responses to previously computed values
+        //notify if incorrect
+
+        //get form elements
+        txtDec = document.getElementById("txtDec");
+        txtBin = document.getElementById("txtBin");
+        txtOct = document.getElementById("txtOct");
+        txtHex = document.getElementById("txtHex");
+
+        //check for errors
+        if (decVal != txtDec.value){
+          alert("problem with decimal");
+        }
+        if (binVal != txtBin.value){
+          alert("problem with binary");
+        }
+        if (octVal != txtOct.value){
+          alert("problem with octal");
+        }
+        //ignore case on hex problems!
+        if (hexVal.toUpperCase() != txtHex.value.toUpperCase()){
+          alert("problem with hex");
+        }
+
+        showDec = document.getElementById("chkDec").checked;
+        showBin = document.getElementById("chkBin").checked;
+        showOct = document.getElementById("chkOct").checked;
+        showHex = document.getElementById("chkHex").checked;
+
+        //display generated value if requested
+        //don't clear this time
+        if (showDec){
+          txtDec.value = decVal;
+        }
+        if (showBin){
+          txtBin.value = binVal;
+        }
+        if (showOct){
+          txtOct.value = octVal;
+        }
+        if (showHex){
+          txtHex.value = hexVal;
+        }      
+        
+      } // end function
+    </script>
+  </head>
+
+  <body onload = "getNums()">
+    <h1>Base Conversion Problems</h1>
+    <form action = "">
+      <table>
+        <tr>
+          <th>base</th>
+          <th>value</th>
+          <th>visible</th>
+        </tr>
+        
+        <tr>
+          <td>10</td>
+          <td>
+            <input type = "text"
+                   id = "txtDec"
+                   value = "0" />
+          </td>
+          <td>
+            <input type = "checkbox"
+                   id = "chkDec" 
+                   checked = "checked" />
+          </td>         
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>
+            <input type = "text"
+                   id = "txtBin"
+                   value = "0" />
+          </td>
+          <td>
+            <input type = "checkbox"
+                   id = "chkBin" />
+          </td>         
+        </tr>
+
+        <tr>
+          <td>8</td>
+          <td>
+            <input type = "text"
+                   id = "txtOct"
+                   value = "0" />
+          </td>
+          <td>
+            <input type = "checkbox"
+                   id = "chkOct" />
+          </td>         
+        </tr>
+
+        <tr>
+          <td>16</td>
+          <td>
+            <input type = "text"
+                   id = "txtHex"
+                   value = "0" />
+          </td>
+          <td>
+            <input type = "checkbox"
+                   id = "chkHex" />
+          </td>         
+        </tr>
+
+      </table>
+      <p>
+        <input type = "button"
+               value = "get new problem" 
+               onclick = "getNums()" />
+        <input type = "button"
+               value = "check responses"
+               onclick = "checkResponses()" />
+      </p>
+    </form>
+    <h1>Instructions</h1>
+    <p>
+      The conversion problems form is a simple table. It works
+      with a single value which can be converted into four different
+      bases.  By default, the form generates a base 10 number, 
+      which you can convert into the other bases for practice.
+      The program will check your conversions to the other bases.
+      It can also be configured to provide a value in any base
+      for conversion to the others.
+    </p>
+    
+    <h2>Getting Started</h2>
+    <p>
+      The program comes pre-set to give a number in base 10. 
+      Click the "get new problem" button to retrieve a number. You 
+      will be given the number in base 10. Fill in the other blanks
+      to indicate your response for the other bases. 
+    </p>
+    
+    <h2>Checking Your Results</h2>
+    <p>
+      When you've entered all your responses, click the "check responses" 
+      button for an evaluation.  The program will warn you of any incorrect
+      responses, but stay quiet if you've gotten everything right.     
+    </p>
+    
+    <p>
+      If you're really stuck on a problem, click on the "visible" check box
+      next to a value, and click the "check responses" button to get the 
+      correct answer.
+    </p>
+    
+    <h2>Varying the problem type</h2>
+    <p>
+      Use the "visible" check box to indicate what base(s) you'd like 
+      visible. If you unclick everything but "binary," for example,
+      you'll get the binary response but all else will be blank.
+    </p>
+    
+    <h2>About the Code</h2>
+    <p>
+      Use "view source" on your browser menu to see the code behind this
+      example. If you already know some programming, you might recognize
+      this code as JavaScript, a language commonly used in client-side
+      web programming. The language is loosely related to Java, the language
+      we use in CS 230. By the end of the course, you should be able to 
+      understand the entire program even though the language you learn
+      will be a little different.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<div class="textPanel">
+<div class="singlePanel">
+<h2>Preparation</h2>
+<p>Online students please watch to video 20</p>
+<h2>Objectives</h2>
+<p>Create a program that assists in a basic form of cryptography, a substitution cypher. Write a program that will accept a phrase and convert it into code by substituting letters according to a key.</p>
+<p>This program will also be an example of functions. You will be given a main function body. This function refers to a number of other functions which you will have to create. It's part of your job to figure out how these functions should be created and what their parameters and output should be.</p>
+<p>The program is based on a standard text-based menu. You'll need to create methods (function) to display the menu, get input from it, and handle the details. Your program should encrypt and decrypt messages.</p>
+<h2>Sample Run</h2>
+<p>Here's a sample run of the basic program in action.</p>
+<pre>
+
+  SECRET DECODER MENU
+  
+  0) Quit
+  1) Encode
+  2) Decode
+  
+What do you want to do? 1
+text to be encoded: python rocks
+AQULEWKEMNJ
+
+  
+  SECRET DECODER MENU
+  
+  0) Quit
+  1) Encode
+  2) Decode
+  
+What do you want to do? 2
+code to be decyphered: AQULEWKEMNJ
+PYTHONROCKS
+
+  
+  SECRET DECODER MENU
+  
+  0) Quit
+  1) Encode
+  2) Decode
+  
+What do you want to do? 0
+Thanks for doing secret spy stuff with me.
+</pre>
+<h2>Starter Code</h2>
+<p>You may copy and paste the following code into your editor to get started. You may also type the code by hand, but your main method must be similar to the one posted here:</p>
+<pre>
+""" crypto.py
+    Implements a simple substitution cypher
+"""
+
+alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+key =   "XPMGTDHLYONZBWEARKJUFSCIQV"
+
+def main():
+  keepGoing = True
+  while keepGoing:
+    response = menu()
+    if response == "1":
+      plain = raw_input("text to be encoded: ")
+      print encode(plain)
+    elif response == "2":
+      coded = raw_input("code to be decyphered: ")
+      print decode(coded)
+    elif response == "0":
+      print "Thanks for doing secret spy stuff with me."
+      keepGoing = False
+    else:
+      print "I don't know what you want to do..."
+
+</pre>
+
+<h2>Notes</h2>
+<p>Please keep the following ideas in mind:</p>
+<dl>
+  <dt style = "font-weight: bold">This is a substitution cypher</dt>
+  <dd style = "margin-left: 5em">Each letter is replaced by another letter with no repetition</dd>
+
+  <dt style = "font-weight: bold">Ignore spaces and punctuation</dt>
+  <dd style = "margin-left: 5em">You <em>must</em> account for spaces (I ignored them, but there are other legitimate responses.) <br />
+      The best program will also account for punctuation and other symbols. (Ignoring them is fine.)</dd>
+      
+  <dt style = "font-weight: bold">Manage Capitalization</dt>
+  <dd style = "margin-left: 5em"> In most cryptography applications, all letters are converted to upperCase. Please follow this convention or deal  
+       with potential case conversion problems in another way. </dd>
+  
+  <dt style = "font-weight: bold">Use Functions</dt>
+  <dd style = "margin-left: 5em"> You may not make significant changes to the main function. Determine which functions are necessary and create 
+       them. (The blackbelt project does allow for one slight modification, noted below.) <em>Do not turn in a program
+       with only a main() function!!</em> Write the code necessary for Python to run the main function as expected</dd>
+       
+  <dt style = "font-weight: bold">Pass data between functions</dt>
+  <dd style = "margin-left: 5em"> Your functionss may require some input and return some output. Part of the task is to determine how the methods 
+       are to be created. </dd>
+  
+  <dt style = "font-weight: bold">Using a key</dt>
+  <dd style = "margin-left: 5em"> There's several workable answers, but I used a string with all the alphabet characters and a second string with a 
+       &quot;scrambled&quot; version of the alphabet. </dd>
+  
+  <dt style = "font-weight: bold">Useful String methods</dt>
+  <dd style = "margin-left: 5em"> This program is all about string manipulation, so you may want to use <code>help("str")</code> in your python 
+       shell to look up some useful techniques. Here are a few things you might need to know how to do:
+    <ul>
+        <li>determine the length of a string</li>
+        <li>convert a string to upper case</li>
+        <li>find the position of a character in a string</li>
+        <li>Determine the character at a certain position in a string</li>
+    </ul></dd>
+
+  <dt style = "font-weight: bold">Don't send spy messages with this</dt>
+  <dd style = "margin-left: 5em"> The encryption used here is laughably weak. This is an interesting exercise in cryptography, but it's nowhere 
+       near useable as an encryption tool. Don't encode your secret recipe with this thing and expect it to remain 
+       secret. </dd>
+
+  <dt style = "font-weight: bold">Test your program</dt>
+  <dd style = "margin-left: 5em"> The best way to test your program is to encrypt a phrase, and then decrypt the encoded phrase to see if you got 
+       the original (sans spaces and other punctuation.) </dd>
+</dl>
+
+<h2>Black Belt Option</h2>
+<p>You can improve this program dramatically by adding the ability to generate a new random key. The new key should have the following characteristics:</p>
+<ul>
+    <li>It should be 26 characters long</li>
+    <li>It should contain all 26 letters</li>
+    <li>The order of the letters should be randomly determined</li>
+    <li>No letters repeat or are missing</li>
+</ul>
+
+<p>You can add a new menu item to allow the user to generate a random key. You'll need a new function for the random key. You'll also need to modify the main() function and the menu to accept new input.</p>
+<p>Note that array manipulation is not necessary for this project. All work can be done directly with strings. You may need some exception-handling, though.</p>
+</div>
+</div>

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+    <title>Change Maker Lab</title>
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "../ajhStandard.css" />
+    <style type = "text/css">
+      dt {
+        float: left;
+        width: 5em;
+        clear: left;
+        margin-left: 35%;
+      }
+      pre {
+        background-color: white;
+        border: 3px double black;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1em;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <h1>Change Maker Lab</h1>
+    <div class = "singlePanel">
+      <h2>Objectives</h2>
+      <p>
+        Create a program that calculates change after a purpose. This
+        will be a <em>sequential</em> algorithm, which is one of the
+        simplest programming patterns. Your solution requires no
+        branching or looping. Simply write a series of statements that
+        will execute in order.
+      </p>
+      
+      <h2>Discussion</h2>
+      <p>
+        The program should ask for a purchase price and the amount of
+        cash tendered. It should then determine how many of the
+        following denomininations should be returned:
+      </p>
+      <dl>
+        <dt>penny</dt>
+        <dd>$0.01</dd>
+
+        <dt>nickel</dt>
+        <dd>$0.05</dd>
+
+        <dt>dime</dt>
+        <dd>$0.10</dd>
+
+        <dt>quarter</dt>
+        <dd>$0.25</dd>
+
+        <dt>dollar</dt>
+        <dd>$1.00</dd>
+
+        <dt>five</dt>
+        <dd>$5.00</dd>
+
+        <dt>ten</dt>
+        <dd>$10.00</dd>
+
+        <dt>twenty</dt>
+        <dd>$20.00</dd>
+      </dl>
+
+    <h2>Sample Run</h2>
+    <pre>
+Price of the item:
+21.37
+Cash tendered:
+50.00
+Change: 28.63
+Change Left: 2863
+twenties: 1
+tens: 0
+fives: 1
+ones: 3
+quarters: 2
+dimes: 1
+nickles: 0
+pennies: 3
+    </pre>
+
+    <h2>Notes</h2>
+    <p>
+      This program is easier if you consider the following ideas:
+    </p>
+
+    <ul>
+      <li>You'll have to figure out how much of each amount is required</li>
+      <li>You'll need to know what's left after you've accounted for each 
+          denomination</li>
+      <li>Look up the <em>modulus</em> operator</li>
+      <li>Modulus works better with integers</li>
+      <li>It may be better to work in pennies rather than dollars</li>
+    </ul>
+    </div>
+  </body>
+</html>
+

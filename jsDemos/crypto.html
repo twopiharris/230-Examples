@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crypto</title>
+  <script type = "text/javascript">
+  
+  var alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var key = "UBWKOVGAPRFJLCQHZENSXDMYTI";
+  
+  function begin(){
+    var keepGoing = true;
+    while(keepGoing){
+      var response = menu();
+      
+      if (response == "1"){
+        plain = prompt("Please enter phrase to be encoded");
+        plain = plain.toUpperCase();
+        alert(encode(plain));
+      } else if (response == "2"){
+        coded = prompt("Please enter phrase to be decoded");
+        coded = coded.toUpperCase();
+        alert(decode(coded));
+      } else if (response == "0"){
+        alert("Thanks for playing!");
+        keepGoing = false;
+      } // end if
+    } // end while
+  } // end begin
+  
+  function menu() {
+    var menuText = "What do you want to do? \n";
+    menuText += "0) quit \n";
+    menuText += "1) encode \n";
+    menuText += "2) decode \n";
+    
+    response = prompt(menuText);
+    return response;
+  } // end menu
+  
+  function encode(plain){
+    var output = "";
+    for (i = 0; i < plain.length; i++){
+      currentChar = plain.charAt(i);
+      position = alpha.indexOf(currentChar);
+      //test for non-existant characters
+      if (position != -1) {
+        newChar = key.charAt(position);
+        output += newChar;        
+      } // end if
+    } // end for
+    return output;
+  } // end encode
+  
+  function decode(coded){
+    var output = "";
+    for (i = 0; i < coded.length; i++){
+      currentChar = coded.charAt(i);
+      position = key.indexOf(currentChar);
+      //test for non-existant characters
+      if (position != -1) {
+        newChar = alpha.charAt(position);
+        output += newChar;        
+      } // end if
+    } // end for
+    return output;
+
+  } // end decode
+  
+</script>  
+  
+  
+</head>
+<body>
+  <h1>Crypto</h1>
+  <button type = "button"
+          onclick = "begin()">
+    encrypt
+  </button>
+  
+</body>
+</html>

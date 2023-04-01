@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8"/>
+	<title>High Low</title>
+	<script type = "text/javascript">
+	
+	/*   NOTE TO STUDENTS
+     *   This code is an example for a homework assignment
+     *   it is written in JavaScript, which is NOT the same
+     *   language you are using.  If you turn in this code,
+     *
+     *   A)  It will not work
+     *   B)  We will know you are being dishonest
+     *
+     *   It's OK to use this code as a starting place,
+     *   but it's definitely easier to do it the way we ask in
+     *   class.
+     *   
+     *   I've deliberately not put the comments in here that
+     *   normally go in my code. I want you to try to do that
+     *   part yourself.
+     *
+     *   I've also not used meaningful variable names, to
+     *   discourage you from using this code yourself.
+     *   
+     *   Please see me or a recitation leader if you're
+     *   struggling...
+     *
+     *
+     *   -Andy
+     */
+     
+		var a = 0;
+		var b = true;
+		
+		function generateRandom(d, c) {
+			return Math.floor(Math.random() * (c - d)) + d;
+		}//end generateRandom function
+		
+		function main() {
+			var e = document.getElementById("sample");
+			e.innerHTML = "Sample Run";
+			var f = document.getElementById("output");
+			f.innerHTML = "I'm thinking of a number between 1 and 100. Guess a number, and I'll tell you if you're too high, too low, or got it right. Good luck!" + "<br/>\n";
+			var g = generateRandom(0, 101);
+			alert("I'm thinking of a number between 1 and 100. Guess a number, and I'll tell you if you're too high, too low, or got it right. Good luck!");
+			var h = prompt("Please input a number.");
+			a++;
+			while (b) {
+				if (h == null) {
+					alert("That didn't work. Please try again.");
+					h = prompt("Please input a number.");
+					b= true;
+				}//end if statement
+				else if (h == g) {
+					f.innerHTML += h + "<br/>\n";
+					f.innerHTML += "You got it! It took you " + a + " tries." + "<br/>\n";
+					h = alert("You got it! It took you " + a + " tries.");
+					b = false;
+				}//end else if statement
+				else if (h < g) {
+					f.innerHTML += h + "<br/>\n";
+					f.innerHTML += "Too low! Please input a number." + "<br/>\n";
+					h = prompt("Too low! Please input a number.");
+					a++;
+					b = true;
+				}//end else if statement
+				else if (h > g) {
+					f.innerHTML += h + "<br/>\n";
+					f.innerHTML += "Too high! Please input a number." + "<br/>\n";
+					h = prompt("Too High! Please input a number.");
+					a++;
+					b = true;
+				}//end else if statement
+				else {
+					alert("That didn't work. Please try again.");
+					h = prompt("Please input a number.");
+					b = true;
+				}//end else statement
+			}//end while loop
+		}//end main function	
+	</script>
+</head>
+<body>
+	<h1>High Low</h1>
+	
+	<button type = "button" onclick = "main()">begin</button>
+	
+	<p>
+    Press the button to see an example of the high low assignment.
+    This example will work much like the one in class but it is written
+    in a different language.
+	</p>
+  
+	<p>
+    Note that in JavaScript, we're using dialog boxes for input and
+    output because this is not a command-line driven language (at
+    least not in the way it's being used here).  Your code does NOT
+    need to use pop-up dialogs.  Command-line I/O is fine.
+	</p>
+  
+	<p>
+    Please try to build this algorithm on your own. I know it is
+    not difficult to see actual JavaScript code, but I have written
+    this example in a far more obtuse style than I normally use.
+    It will be far easier to build this algorithm up and then implement
+    in Python than it will be to reverse engineer my JS code.
+	</p>
+	
+	<h2 id = "sample"></h2>
+	
+	<div id = "output"></div>
+</body>
+</html>

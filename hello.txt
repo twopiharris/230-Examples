@@ -1,0 +1,9 @@
+OVERVIEW
+Ask the user's name, and give a customized
+greeting
+
+make sure I can do input and output
+Ask the user her name
+put that name in memory
+print a greeting containing the name
+

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang = "en-us">
+
+<head>
+  <title>Hello in JS</title>
+  <meta charset = "utf-8" />
+  <script type = "text/javascript">
+    function sayHi(){
+      name = document.getElementById("txtName").value;
+      output = document.getElementById("output");
+      output.innerHTML = "Hello " + name + " from JavaScript";
+    } 
+
+  </script>
+</head>
+
+<body>
+  <h1>Hello from JS</h1>
+  <input type = "text"
+         id = "txtName"
+         placeHolder = "Enter your name" />
+
+  <br>
+  <div id = "output">
+  Look here for a response
+  </div>
+
+
+  <button type = "button"
+          onclick = "sayHi()">
+    say hi
+  </button>
+</body>

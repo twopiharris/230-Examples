@@ -1,0 +1,306 @@
+H1 {
+  font-weight: normal;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20pt;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+#input, #output {
+  color: #00FF00;
+  width: 145px;
+  margin-bottom: 20px;
+  background: linear-gradient(215deg, rgba(156, 156, 156, 0.03) 0%, rgba(156, 156, 156, 0.03) 50%,rgba(20, 20, 20, 0.03) 50%, rgba(20, 20, 20, 0.03) 100%),linear-gradient(107deg, rgba(179, 179, 179, 0.03) 0%, rgba(179, 179, 179, 0.03) 50%,rgba(7, 7, 7, 0.03) 50%, rgba(7, 7, 7, 0.03) 100%),linear-gradient(25deg, rgba(30, 30, 30, 0.01) 0%, rgba(30, 30, 30, 0.01) 50%,rgba(165, 165, 165, 0.01) 50%, rgba(165, 165, 165, 0.01) 100%),linear-gradient(146deg, rgba(54, 54, 54, 0.03) 0%, rgba(54, 54, 54, 0.03) 50%,rgba(246, 246, 246, 0.03) 50%, rgba(246, 246, 246, 0.03) 100%),linear-gradient(225deg, rgba(8, 8, 8, 0.01) 0%, rgba(8, 8, 8, 0.01) 50%,rgba(133, 133, 133, 0.01) 50%, rgba(133, 133, 133, 0.01) 100%),linear-gradient(38deg, rgba(57, 57, 57, 0.02) 0%, rgba(57, 57, 57, 0.02) 50%,rgba(196, 196, 196, 0.02) 50%, rgba(196, 196, 196, 0.02) 100%),linear-gradient(122deg, rgba(115, 115, 115, 0.02) 0%, rgba(115, 115, 115, 0.02) 50%,rgba(101, 101, 101, 0.02) 50%, rgba(101, 101, 101, 0.02) 100%),linear-gradient(154deg, rgba(217, 217, 217, 0.01) 0%, rgba(217, 217, 217, 0.01) 50%,rgba(126, 126, 126, 0.01) 50%, rgba(126, 126, 126, 0.01) 100%),linear-gradient(144deg, rgba(204, 204, 204, 0.01) 0%, rgba(204, 204, 204, 0.01) 50%,rgba(139, 139, 139, 0.01) 50%, rgba(139, 139, 139, 0.01) 100%),linear-gradient(90deg, rgb(0, 2, 29),rgb(4, 150, 89));
+
+}
+
+
+
+#codeWrapper {
+  float: left;
+  margin: 10px;
+}
+
+#CPUWrapper {
+  width: 300px;
+  height: 400px;
+  float: left;
+  margin: 10px;
+}
+#CPU {
+  box-sizing: border-box;
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  font-size: 12pt;
+}
+
+
+#RAM TD {
+  border: 1px #AAAAAA solid;
+  text-align:center;
+  color: #ffFF66;
+  font-family: courier new;
+  padding: 3px;
+}
+#CPU INPUT {
+  width:36px;
+  margin: 3px auto;
+  text-align: center;
+  font-family: courier new;
+  background: transparent;
+  border: 1px solid #555555;
+  color: #AAAAAA;
+  font-size: 16px;   
+}
+
+#CPU INPUT#clock {
+  width:100%;
+}
+
+#RAM INPUT {
+  width:34px;
+  display: block;
+  margin: 3px auto;
+  text-align: center;
+  font-family: courier new;
+  background: transparent;
+  border: 1px solid #555555;
+  color: #AAAAAA;
+  font-size: 16px;   
+}
+
+
+#RAM {
+  width: 500px;
+  border-collapse: collapse;
+}
+
+#logWrapper {
+  float: left;
+  width:508px;
+  height: 565px;
+  margin: 10px;
+}
+
+#liveFeed {
+  width: 100%;
+  height: 200px;
+  padding: 12px;
+  font-size: 11pt;
+  overflow-y: auto;
+}
+
+#log {
+  width: 100%;
+  height: 318px;
+  padding: 12px;
+  font-size: 11pt;
+  overflow-y: auto;
+}
+#RAMWrapper {
+  float: left;
+  margin: 10px;
+}
+
+#RAM, #CPU, #log, #liveFeed {
+  background: linear-gradient(50deg, rgba(146, 146, 146, 0.02) 0%, rgba(146, 146, 146, 0.02) 25%,rgba(82, 82, 82, 0.02) 25%, rgba(82, 82, 82, 0.02) 50%,rgba(217, 217, 217, 0.02) 50%, rgba(217, 217, 217, 0.02) 75%,rgba(41, 41, 41, 0.02) 75%, rgba(41, 41, 41, 0.02) 100%),linear-gradient(252deg, rgba(126, 126, 126, 0.01) 0%, rgba(126, 126, 126, 0.01) 25%,rgba(117, 117, 117, 0.01) 25%, rgba(117, 117, 117, 0.01) 50%,rgba(219, 219, 219, 0.01) 50%, rgba(219, 219, 219, 0.01) 75%,rgba(41, 41, 41, 0.01) 75%, rgba(41, 41, 41, 0.01) 100%),linear-gradient(272deg, rgba(166, 166, 166, 0.01) 0%, rgba(166, 166, 166, 0.01) 20%,rgba(187, 187, 187, 0.01) 20%, rgba(187, 187, 187, 0.01) 40%,rgba(238, 238, 238, 0.01) 40%, rgba(238, 238, 238, 0.01) 60%,rgba(204, 204, 204, 0.01) 60%, rgba(204, 204, 204, 0.01) 80%,rgba(5, 5, 5, 0.01) 80%, rgba(5, 5, 5, 0.01) 100%),linear-gradient(86deg, rgba(143, 143, 143, 0.02) 0%, rgba(143, 143, 143, 0.02) 12.5%,rgba(36, 36, 36, 0.02) 12.5%, rgba(36, 36, 36, 0.02) 25%,rgba(23, 23, 23, 0.02) 25%, rgba(23, 23, 23, 0.02) 37.5%,rgba(223, 223, 223, 0.02) 37.5%, rgba(223, 223, 223, 0.02) 50%,rgba(101, 101, 101, 0.02) 50%, rgba(101, 101, 101, 0.02) 62.5%,rgba(94, 94, 94, 0.02) 62.5%, rgba(94, 94, 94, 0.02) 75%,rgba(148, 148, 148, 0.02) 75%, rgba(148, 148, 148, 0.02) 87.5%,rgba(107, 107, 107, 0.02) 87.5%, rgba(107, 107, 107, 0.02) 100%),linear-gradient(25deg, rgba(2, 2, 2, 0.02) 0%, rgba(2, 2, 2, 0.02) 16.667%,rgba(51, 51, 51, 0.02) 16.667%, rgba(51, 51, 51, 0.02) 33.334%,rgba(26, 26, 26, 0.02) 33.334%, rgba(26, 26, 26, 0.02) 50.001000000000005%,rgba(238, 238, 238, 0.02) 50.001%, rgba(238, 238, 238, 0.02) 66.668%,rgba(128, 128, 128, 0.02) 66.668%, rgba(128, 128, 128, 0.02) 83.33500000000001%,rgba(21, 21, 21, 0.02) 83.335%, rgba(21, 21, 21, 0.02) 100.002%),linear-gradient(325deg, rgba(95, 95, 95, 0.03) 0%, rgba(95, 95, 95, 0.03) 14.286%,rgba(68, 68, 68, 0.03) 14.286%, rgba(68, 68, 68, 0.03) 28.572%,rgba(194, 194, 194, 0.03) 28.572%, rgba(194, 194, 194, 0.03) 42.858%,rgba(51, 51, 51, 0.03) 42.858%, rgba(51, 51, 51, 0.03) 57.144%,rgba(110, 110, 110, 0.03) 57.144%, rgba(110, 110, 110, 0.03) 71.42999999999999%,rgba(64, 64, 64, 0.03) 71.43%, rgba(64, 64, 64, 0.03) 85.71600000000001%,rgba(31, 31, 31, 0.03) 85.716%, rgba(31, 31, 31, 0.03) 100.002%),linear-gradient(90deg, hsl(80,0%,14%),hsl(80,0%,14%));
+}
+
+
+
+BODY {
+  min-width: 1710px;
+  overflow: auto;
+  font-family: courier new;
+  color: #EEEEEE;
+  font-size: 16pt;
+  width: 100%;
+min-height: 500px;
+background: linear-gradient(161deg, rgba(117, 117, 117, 0.03) 0%, rgba(117, 117, 117, 0.03) 50%,rgba(8, 8, 8, 0.03) 50%, rgba(8, 8, 8, 0.03) 100%),linear-gradient(59deg, rgba(245, 245, 245, 0.05) 0%, rgba(245, 245, 245, 0.05) 50%,rgba(68, 68, 68, 0.05) 50%, rgba(68, 68, 68, 0.05) 100%),linear-gradient(286deg, rgba(107, 107, 107, 0.07) 0%, rgba(107, 107, 107, 0.07) 50%,rgba(7, 7, 7, 0.07) 50%, rgba(7, 7, 7, 0.07) 100%),linear-gradient(123deg, rgba(9, 9, 9, 0.09) 0%, rgba(9, 9, 9, 0.09) 50%,rgba(120, 120, 120, 0.09) 50%, rgba(120, 120, 120, 0.09) 100%),linear-gradient(170deg, rgba(202, 202, 202, 0.01) 0%, rgba(202, 202, 202, 0.01) 50%,rgba(19, 19, 19, 0.01) 50%, rgba(19, 19, 19, 0.01) 100%),linear-gradient(210deg, rgba(64, 64, 64, 0.04) 0%, rgba(64, 64, 64, 0.04) 50%,rgba(4, 4, 4, 0.04) 50%, rgba(4, 4, 4, 0.04) 100%),linear-gradient(90deg, rgb(249, 17, 190),rgb(100, 28, 213));
+}
+
+TEXTAREA {
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  font-family: courier new;
+  font-size: 16pt;
+  padding:12px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+#codeListing {
+  font-size: 15pt;
+}
+
+#code {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  height: 500px;
+  color: #222222;
+  background:linear-gradient(90deg, rgba(165, 165, 165, 0.03) 0%, rgba(165, 165, 165, 0.03) 8%,rgba(235, 235, 235, 0.03) 8%, rgba(235, 235, 235, 0.03) 9%,rgba(7, 7, 7, 0.03) 9%, rgba(7, 7, 7, 0.03) 14%,rgba(212, 212, 212, 0.03) 14%, rgba(212, 212, 212, 0.03) 17%,rgba(219, 219, 219, 0.03) 17%, rgba(219, 219, 219, 0.03) 95%,rgba(86, 86, 86, 0.03) 95%, rgba(86, 86, 86, 0.03) 100%),linear-gradient(67.5deg, rgba(80, 80, 80, 0.03) 0%, rgba(80, 80, 80, 0.03) 11%,rgba(138, 138, 138, 0.03) 11%, rgba(138, 138, 138, 0.03) 17%,rgba(122, 122, 122, 0.03) 17%, rgba(122, 122, 122, 0.03) 24%,rgba(166, 166, 166, 0.03) 24%, rgba(166, 166, 166, 0.03) 27%,rgba(245, 245, 245, 0.03) 27%, rgba(245, 245, 245, 0.03) 89%,rgba(88, 88, 88, 0.03) 89%, rgba(88, 88, 88, 0.03) 100%),linear-gradient(67.5deg, rgba(244, 244, 244, 0.03) 0%, rgba(244, 244, 244, 0.03) 4%,rgba(16, 16, 16, 0.03) 4%, rgba(16, 16, 16, 0.03) 10%,rgba(157, 157, 157, 0.03) 10%, rgba(157, 157, 157, 0.03) 20%,rgba(212, 212, 212, 0.03) 20%, rgba(212, 212, 212, 0.03) 83%,rgba(5, 5, 5, 0.03) 83%, rgba(5, 5, 5, 0.03) 84%,rgba(237, 237, 237, 0.03) 84%, rgba(237, 237, 237, 0.03) 100%),linear-gradient(90deg, #FFF,#FFF);
+    
+}
+
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
+	box-shadow:inset 0px 1px 0px 0px #caefab;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #5cb811));
+	background:-moz-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-webkit-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-o-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-ms-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811',GradientType=0);
+	background-color:#77d42a;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #268a16;
+	display:inline-block;
+	cursor:pointer;
+	color:#FFFFFF;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 12px;
+	text-decoration:none;
+
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a));
+	background:-moz-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:-webkit-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:-o-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:-ms-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a',GradientType=0);
+	background-color:#5cb811;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButtonRed {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100));
+	background:-moz-linear-gradient(top, #fe1a00 5%, #ce0100 100%);
+	background:-webkit-linear-gradient(top, #fe1a00 5%, #ce0100 100%);
+	background:-o-linear-gradient(top, #fe1a00 5%, #ce0100 100%);
+	background:-ms-linear-gradient(top, #fe1a00 5%, #ce0100 100%);
+	background:linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100',GradientType=0);
+	background-color:#fe1a00;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #d83526;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 12px;
+	text-decoration:none;
+}
+.myButtonRed:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00));
+	background:-moz-linear-gradient(top, #ce0100 5%, #fe1a00 100%);
+	background:-webkit-linear-gradient(top, #ce0100 5%, #fe1a00 100%);
+	background:-o-linear-gradient(top, #ce0100 5%, #fe1a00 100%);
+	background:-ms-linear-gradient(top, #ce0100 5%, #fe1a00 100%);
+	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00',GradientType=0);
+	background-color:#ce0100;
+}
+.myButtonRed:active {
+	position:relative;
+	top:1px;
+}
+
+#footer {
+  box-sizing:border-box;
+  clear: both;
+  width:100%;
+    text-align:center;
+  font-size: 11pt;
+  border-top:1px dashed #AAAAAA;
+  padding:6px;
+}
+
+#footer A {
+  color: #FFAAEE;
+}
+
+#linkPopup, #linkPopup2 {
+display: none;
+position: absolute;
+width: 1000px;
+height: 600px;
+top: 40px;
+left: 50%;
+margin-left:-500px;
+background-color: rgb(0, 0, 0);
+padding: 0px;
+font-family: verdana;
+font-size: 12pt;
+color: #DDDDDD;
+z-index: 1001;
+  padding:10px 30px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+#linkPopup2 {
+  height: 240px;
+  top: 250px;
+}
+
+#linkPopup A, #linkPopup2 A{
+color: #DDDDDD;
+}
+
+#linkPopup A:hover, #linkPopup2 A:hover, #linkPopup .close A, #linkPopup2 .close A{
+color: #DDDDDD;
+text-decoration: none;
+}
+#linkPopup H4, #linkPopup2 H4 {
+  float: left;
+  margin: 0px 0px 20px 0px;
+  font-size: 16pt;
+  font-weight: normal;
+    
+}
+#linkPopup P, #linkPopup2 P {
+  clear: both;
+}
+
+#linkPopup .close, #linkPopup2 .close{
+  font-family: verdana;
+  float: right;
+  font-size:16pt;
+}
+
+.alternateTable {
+ border-collapse: collapse; 
+}
+.alternateTable TD {
+border: 1px solid #666666;
+padding: 5px;
+}
+.alternateTable tr:nth-child(even) {background: #333333;}
+.alternateTable tr:nth-child(1)  {background: linear-gradient(161deg, rgba(117, 117, 117, 0.03) 0%, rgba(117, 117, 117, 0.03) 50%,rgba(8, 8, 8, 0.03) 50%, rgba(8, 8, 8, 0.03) 100%),linear-gradient(59deg, rgba(245, 245, 245, 0.05) 0%, rgba(245, 245, 245, 0.05) 50%,rgba(68, 68, 68, 0.05) 50%, rgba(68, 68, 68, 0.05) 100%),linear-gradient(286deg, rgba(107, 107, 107, 0.07) 0%, rgba(107, 107, 107, 0.07) 50%,rgba(7, 7, 7, 0.07) 50%, rgba(7, 7, 7, 0.07) 100%),linear-gradient(123deg, rgba(9, 9, 9, 0.09) 0%, rgba(9, 9, 9, 0.09) 50%,rgba(120, 120, 120, 0.09) 50%, rgba(120, 120, 120, 0.09) 100%),linear-gradient(170deg, rgba(202, 202, 202, 0.01) 0%, rgba(202, 202, 202, 0.01) 50%,rgba(19, 19, 19, 0.01) 50%, rgba(19, 19, 19, 0.01) 100%),linear-gradient(210deg, rgba(64, 64, 64, 0.04) 0%, rgba(64, 64, 64, 0.04) 50%,rgba(4, 4, 4, 0.04) 50%, rgba(4, 4, 4, 0.04) 100%),linear-gradient(90deg, rgb(249, 17, 190),rgb(100, 28, 213));}
+
+SELECT {
+  padding: 5px;
+  font-size: 11pt;
+}
+
+button:focus {outline:0;}

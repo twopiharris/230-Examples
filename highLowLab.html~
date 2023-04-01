@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+    <title>High Low (conditions) Lab </title>
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "../ajhStandard.css" />
+    <style type = "text/css">
+      dt {
+        float: left;
+        width: 5em;
+        clear: left;
+        margin-left: 35%;
+      }
+      pre {
+        background-color: white;
+        border: 3px double black;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1em;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <h1>High Low Lab</h1>
+    <div class = "singlePanel">
+      <h2>Objectives</h2>
+      <p>
+        Create a program that illustrates your understanding of conditions. Create 
+        a "High-Low" game which allows the user to play a game with the computer. 
+        The game will require input, output, branching and loop behaviors.
+      </p>
+ 
+      <h2>Discussion</h2>
+      <p>
+        The game begins with the computer generating a random integer between 1 and 100.
+        The user will guess a number, and the computer will indicate whether the guess
+        is too high, too low, or correct. This will continue until the user has correctly
+        guessed the computer's number.
+      </p>
+      <pre>
+I'm thinking of a number between
+1 and 100. Guess a number, and I'll tell you
+if you're too high, too low, or got it right.
+Good luck!
+1) Please enter a number
+50
+Too low!
+2) Please enter a number
+75
+Too low!
+3) Please enter a number
+88
+Too high!
+4) Please enter a number
+80
+Too low!
+5) Please enter a number
+84
+Too high!
+6) Please enter a number
+82
+Too low!
+7) Please enter a number
+83
+Correct!
+It took 7 turns.
+      </pre>
+      
+      <h2>Hints</h2>
+      <ul>
+        <li>You'll need some type of loop around the main program</li>
+        <li>Generate a random number (with java.util.Random)</li>
+        <li>Get input from the user</li>
+        <li>You'll need several comparisons of user's guess to target value</li>
+        <li>Don't forget to give feedback to the user</li>
+        <li>Watch for endless loops!</li>
+        <li>Don't forget to use debug mode if you get stuck</li>
+      </ul>
+    </div>
+    
+    <h2>Blackbelt Challenge</h2>
+    <p>
+      Once you get the basic form working, see if you can write a program
+      that goes the other direction.  The user generates the number, and
+      the computer tries to guess it.  A sample run might look like this:
+    </p>
+    
+    <pre>
+Please think of a number between
+one and one hundred. I'll guess
+your number. You tell me if I'm 
+too high, too low, or correct.
+I guess: 50
+too (h)igh, too (l)ow, or (c)orrect?
+h
+I guess: 25
+too (h)igh, too (l)ow, or (c)orrect?
+l
+I guess: 37
+too (h)igh, too (l)ow, or (c)orrect?
+l
+I guess: 43
+too (h)igh, too (l)ow, or (c)orrect?
+h
+I guess: 40
+too (h)igh, too (l)ow, or (c)orrect?
+high
+Sorry, I didn't understand you...
+I guess: 40
+too (h)igh, too (l)ow, or (c)orrect?
+h
+I guess: 39
+too (h)igh, too (l)ow, or (c)orrect?
+h
+I guess: 38
+too (h)igh, too (l)ow, or (c)orrect?
+c
+I got it! it took 7 turns.
+    </pre>
+  </body>
+</html>

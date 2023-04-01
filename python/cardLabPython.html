@@ -1,0 +1,152 @@
+<h2>Preparation</h2>
+<p>
+Learn through videos, lectures, and or book up to arrays
+</p>
+
+<h2>Objective</h2>
+<p>
+The objective of this lab is to create the beginnings for a python-based card game. We DO NOT expect a fully functioning card game. What we do expect is that you create a main function and various functions that will accomplish the following goals:
+</p>
+<ul>
+  <li>Build a single-dimension array to keep track of the location of every card</li>
+  <li>DO NOT move cards around... Just use the array to keep track of where each card is</li>
+  <li>All card data is really integers - Use other arrays to translate integers to suits, ranks, and player names</li>
+  <li>All cards will start in the DECK</li>
+  <li>Write a function that translates a card number to a card name. HINT - look at the suitName and rankName arrays</li>
+  <li>Write a function to assign a card to a given player</li>
+  <li>Dealing a card involves picking a card number and assigning a new location to the corresponding element of 
+      cardLoc</li>
+  <li>Write a function that displays the location of every card. (Early versions should show numeric values for the 
+      card number and location. Later versions can include string values for prettier output.)</li>
+  <li>Write a function that prints the name of every card in a given hand</li>
+</ul>
+  
+<h2>Hints</h2>
+<ul>
+  <li>Most people make this way too complicated</li>
+  <li>You don't need any arrays I didn't already give you</li>
+  <li>Do not use a two-dimensional array (unless you want to for the blackbelt challenge)</li>
+  <li>Computer memory does <em>not</em> work like actual cards. You are not moving things around.</li>
+</li>
+ 
+<h2>Starter Code</h2>
+<p>
+  Please begin by copying the following code to your editor.  
+  You will not need to change my code at all, but you will need to add several new functions
+  to make it work correctly.
+</p>
+
+<pre>
+""" cardGame.py
+    basic card game framework
+    keeps track of card locations for as many hands as needed
+"""
+from random import *
+
+NUMCARDS = 52
+DECK = 0
+PLAYER = 1
+COMP = 2
+
+cardLoc = [0] * NUMCARDS
+suitName = ("hearts", "diamonds", "spades", "clubs")
+rankName = ("Ace", "Two", "Three", "Four", "Five", "Six", "Seven", 
+            "Eight", "Nine", "Ten", "Jack", "Queen", "King")
+playerName = ("deck", "player", "computer")
+
+def main():
+  clearDeck()
+
+  for i in range(5):
+    assignCard(PLAYER)
+    assignCard(COMP)
+
+  showDeck()
+  showHand(PLAYER)
+  showHand(COMP)          
+</pre>
+
+<h2>Sample output</h2>
+<p>
+  Your program output should look something like this.  (It's perfectly fine if things
+  don't line up perfectly.  It's the general structure I'm looking for.)
+</p>
+
+<pre>
+Location of all cards
+# 	 card 	 	 location
+0 	 Ace of hearts 	 deck
+1 	 Two of hearts 	 deck
+2 	 Three of hearts 	 deck
+3 	 Four of hearts 	 computer
+4 	 Five of hearts 	 deck
+5 	 Six of hearts 	 deck
+6 	 Seven of hearts 	 computer
+7 	 Eight of hearts 	 deck
+8 	 Nine of hearts 	 deck
+9 	 Ten of hearts 	 deck
+10 	 Jack of hearts 	 deck
+11 	 Queen of hearts 	 deck
+12 	 King of hearts 	 deck
+13 	 Ace of diamonds 	 deck
+14 	 Two of diamonds 	 deck
+15 	 Three of diamonds 	 deck
+16 	 Four of diamonds 	 deck
+17 	 Five of diamonds 	 deck
+18 	 Six of diamonds 	 deck
+19 	 Seven of diamonds 	 deck
+20 	 Eight of diamonds 	 player
+21 	 Nine of diamonds 	 deck
+22 	 Ten of diamonds 	 deck
+23 	 Jack of diamonds 	 deck
+24 	 Queen of diamonds 	 computer
+25 	 King of diamonds 	 player
+26 	 Ace of spades 	 deck
+27 	 Two of spades 	 deck
+28 	 Three of spades 	 deck
+29 	 Four of spades 	 deck
+30 	 Five of spades 	 deck
+31 	 Six of spades 	 deck
+32 	 Seven of spades 	 deck
+33 	 Eight of spades 	 player
+34 	 Nine of spades 	 player
+35 	 Ten of spades 	 player
+36 	 Jack of spades 	 deck
+37 	 Queen of spades 	 deck
+38 	 King of spades 	 deck
+39 	 Ace of clubs 	 deck
+40 	 Two of clubs 	 computer
+41 	 Three of clubs 	 deck
+42 	 Four of clubs 	 deck
+43 	 Five of clubs 	 deck
+44 	 Six of clubs 	 deck
+45 	 Seven of clubs 	 deck
+46 	 Eight of clubs 	 computer
+47 	 Nine of clubs 	 deck
+48 	 Ten of clubs 	 deck
+49 	 Jack of clubs 	 deck
+50 	 Queen of clubs 	 deck
+51 	 King of clubs 	 deck
+
+Displaying player hand:
+Eight of diamonds
+King of diamonds
+Eight of spades
+Nine of spades
+Ten of spades
+
+Displaying computer hand:
+Four of hearts
+Seven of hearts
+Queen of diamonds
+Two of clubs
+Eight of clubs
+</pre>
+
+<h2>Blackbelt</h2>
+<p>
+  Use what you have created and extend it to actually implement a working card game. War is pretty easy, as is 
+  BlackJack. If you're feeling more ambitious, you might try something like "Go Fish." Poker is easy to write, but 
+  the scorekeeping can be tricky.
+</p>
+ 

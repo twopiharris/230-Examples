@@ -1,0 +1,525 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Object Oriented Programming in Python</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20050728" />
+<meta name="author" content="Eric A. Meyer" />
+<meta name="company" content="Complex Spiral Consulting" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>IUPUI Computer Science</h1>
+<h2>Object - Oriented Programming in Python</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Object - Oriented Programming in Python</h1>
+<h3>Andy Harris</h3>
+<h4>IUPUI Computer Science</h4>
+</div>
+
+<div class="slide">
+  <h1>What is OOP?</h1>
+  <ul>
+    <li>A way of looking at problems</li>
+    <li>Break problems into objects</li>
+    <li>Objects have properties and methods</li>
+    <li>(and sometimes events)</li>
+    <li>Objects encapsulate functions and data</li>
+    <li><a href="basicObject.mp3">Basic Objects</a>
+        Audio for next few slides</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Basic Object</h1>
+  <ul>
+    <li><a href = "basicCritter.py">basicCritter.py</a></li>
+    <li><a href = "../oop3/basicCritter.py">python3</a></li>
+    <li>Create a new class called Critter</li>
+    <li>A class is the recipe for an object</li>
+    <li>All classes based on object</li>
+    <li>Add name variable to class</li>
+    <li>name has a default value</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Using the basic object</h1>
+  <ul>
+    <li>Create a new variable c</li>
+    <li>c is an <em>instance</em> of Critter</li>
+    <li><code>name</code> is now a sub-variable of critter</li>
+    <li>You can retrieve the value of <code>c.name</code></li>
+    <li>You can also set it</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Introducing properties</h1>
+  <ul>
+    <li>Objects can have <em>properties</em></li>
+    <li>Sometimes called member variable, instance variable, attribute</li>
+    <li>Properties are like adjectives</li>
+    <li>They have name, value, and type</li>
+    <li>They are always referred to in an instance context</li>
+    <li>If <code>c</code> is a Critter, you can use <code>c.name</code></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Adding Methods</h1>
+  <ul>
+    <li><a href="method.mp3">Adding Methods</a>
+        Audio</li>
+    <li>A method is something an object can do</li>
+    <li>If a property is an adjective, a method is a verb</li>
+    <li>Look at <a href = "method.py">method.py</a></li>
+    <li><a href = "../oop3/method.py">python3</a></li>
+    <li>A method is just like a function except:
+      <ul>
+        <li>It is defined inside a class</li>
+        <li>It always has a <em>self</em> parameter</li>
+      </ul>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Adding the sayHi() method</h1>
+  <ul>
+    <li>Critter class definition begins the same way</li>
+    <li>add a function def <em>inside</em> class def</li>
+    <li>add the <em>self</em> parameter</li>
+    <li>This provides a link to the current class</li>
+    <li>Inside the method, refer to name as <em>self.name</em></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Using the sayHi() method</h1>
+  <ul>
+    <li>Create an instance of Critter called c</li>
+    <li>Change the name</li>
+    <li>Use <code>c.sayHi()</code> to have the Critter greet you</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Adding a constructor</h1>
+  <ul>
+    <li><a href="constructor.mp3">Adding Constructors</a>
+        audio file</li>
+    <li><a href="critter.py">Critter.py</a></li>
+    <li><a href = "../oop3/critter.py">python3</a></li>
+    <li>Classes have a special method called a <em>constructor</em></li>
+    <li>This class is called whenever the programmer creates an instance</li>
+    <li>In Python, the constructor is called <code>__init__</code></li>
+    <li>Like all methods, it includes the self parameter</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Building the Critter Constructor</h1>
+  <ul>
+    <li>Create the <code>__init__</code> method</li>
+    <li>Call the parent class' <code>__init__</code> method</li>
+    <li>Initialize member variables</li>
+    <li>It's no longer necessary to define members at the class</li>
+    <li>All classes should have an explicitly defined constructor</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Basic PolyMorphism</h1>
+  <ul>
+    <li><a href="overload.py">overload.py</a></li>
+    <li><a href = "../oop3/overload.py">python3</a></li>
+    <li>Usually when you build a critter you'll set the name immediately</li>
+    <li>It would be nice if you could specify the name when you create one</li>
+    <li>You can add parameters to the constructor</li>
+    <li>The name parameter brings in a variable called name</li>
+    <li>Note this is <em>NOT THE SAME</em> as self.name</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Adding a default parameter</h1>
+  <ul>
+    <li>If the user doesn't specify a name (line 15)...</li>
+    <li>The default value <code>"Anonymous"</code> is assigned</li>
+    <li>If the user does supply a name (line 17)</li>
+    <li>That name is used instead</li>
+    <li><em>Polymorphism:</em> different behavior in different circumstances</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Importing a module</h1>
+  <ul>
+    <li><a href="name_main.mp3">Namespaces and Modules</a>
+        audio file</li>
+    <li>One advantage of objects is reusability</li>
+    <li>It would be nice to store the critter def in a file</li>
+    <li>Then any program could import the file and use the critte</li>
+    <li>You can use the import statement on your own files!</li>
+    <li>The file should be in the same directory</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Importing and namespaces</h1>
+  <ul>
+    <li><a href="useCritter.py">useCritter.py</a> imports
+        <a href="critter.py">critter.py</a></li>
+    <li><a href = "../oop3/useCritter.py">python3 useCritter.py</a></li>
+    <li><a href = "../oop3/critter.py">python3 critter.py</a></li>
+    <li>...but there's a problem...</li>
+    <li>The import command <em>runs</em> any python code in the module</li>
+    <li>We want to run the class definition,</li>
+    <li>but not the <code>main()</code> function</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Couldn't you eliminate main()?</h1>
+  <ul>
+    <li>One solution would be to eliminate <code>main()</code> in critter.py</li>
+    <li>Then critter.py would not be executable</li>
+    <li>It would only be for importing into other programs</li>
+    <li>However, it's nice to have a <code>main()</code> in library modules</li>
+    <li>It's a great place to test the functions or objects</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Introducing namespaces</h1>
+  <ul>
+    <li>Python uses <em>namespaces</em></li>
+    <li>A namespace is defined whenever you run a program</li>
+    <li>If you import a module, you also define a namespace</li>
+    <li>Run critter.py and look at the namespace (<code>__name__</code>)</li>
+    <li>The namespace is <code>"__main__"</code> for the currently running module</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Namespaces and importing</h1>
+  <ul>
+    <li>Now run useCritter.py</li>
+    <li>Its own namespace is <code>"__main__"</code>
+        (because it's the running program)</li>
+    <li>When it imports critter.py, look at critter's namespace</li>
+    <li>Critter now says its namespace is <code>"critter"</code>
+        (the module name)</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Running only when you want...</h1>
+  <ul>
+    <li>The <code>__name__</code> variable can be used to see
+        if code is run as a module</li>
+    <li>If <code>__name__</code> is <code>"__main__"</code>,
+        the code has been directly run</li>
+    <li>If <code>__name__</code> is something else,
+        the code has been imported</li>
+    <li>Only run the main() function if <br />
+        <code>__name__ == "__main__"</code></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Building critter as a module</h1>
+  <ul>
+    <li>Best way to fix this: always test the namespace</li>
+    <li>look at <a href="critterModule.py">critterModule.py</a></li>
+    <li><a href = "../oop3/critterModule.py">python3</a></li>
+    <li>The Critter class definition is just like critter.py</li>
+    <li>The main() function is also the same</li>
+    <li>The only difference is lines 18 and 19</li>
+    <li>Run the main function if this is the currently running module</li>
+    <li>If this module has been imported, ignore main</li>
+    <li>Most Python code follows this convention</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Access Methods</h1>
+  <ul>
+    <li><a href="accessMods.mp3">Access Modifiers</a>
+        audio file</li>
+    <li><a href="accessMethods.py">accessMethods.py</a></li>
+    <li><a href = "../oop3/accessMethods.py">python3</a></li>
+    <li>It's common to provide special methods to a class</li>
+    <li>a <em>get</em> method allows you to get the value of a property</li>
+    <li>a <em>set</em> method allows you to modify the value of a property</li>
+    <li>getters and setters are called <em>access methods</em></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Get Methods</h1>
+  <ul>
+    <li>A getter returns the value of a variable</li>
+    <li>It can filter or modify the output</li>
+    <li>Getters usually have only the self paramter</li>
+    <li>They return a property value</li>
+    <li>It's common to have a getter for each property</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Set Methods</h1>
+  <ul>
+    <li>A setter is used to change the value of a property</li>
+    <li>It can filter and modify the input</li>
+    <li>Setters normally accept a property parameter</li>
+    <li>This value is often tested or modified, then passed to a property</li>
+    <li>It's common to have a setter for each property</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Access methods protect data</h1>
+  <ul>
+    <li>Frequently you will want to enforce some rules about data</li>
+    <li>Imagine you want a circle class</li>
+    <li>However, the radius can't be a negative number,</li>
+    <li>...and it can't be larger than 100</li>
+    <li>Also, you want to be able to get the diameter</li>
+    <li>You shouldn't be allowed to change the diameter,</li>
+    <li>...because it's dependent on the radius</li>
+    <li>Access methods can enforce these rules</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Case Study: the Circle class</h1>
+  <ul>
+    <li>Look at <a href="circle.py">circle.py</a></li>
+    <li><a href = "../oop3/circle.py">python3</a></li>
+    <li>This class enforces the rules about radius</li>
+    <li>The <code>setRadius</code> method enforces radius rules</li>
+    <li>By the time the function is finished, <code>radius</code>
+        has a legal value</li>
+    <li>Even the constructor uses <code>setRadius</code></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Access methods and virtual properties</h1>
+  <ul>
+    <li>Getters also help work with data</li>
+    <li>The <code>getRadius()</code> method is very straightforward</li>
+    <li>It simply returns the radius</li>
+    <li><code>GetDiameter()</code> is special</li>
+    <li>There <em>is</em> no diameter property (nor should there be)</li>
+    <li>The diameter is derived from the radius when needed</li>
+    <li>The <code>setDiameter()</code> method actually changes the radius</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Making 'private' properties</h1>
+  <ul>
+    <li>In circle.py, it's still possible to directly access
+        <code>radius</code></li>
+    <li>This can cause illegal values</li>
+    <li>It would be great if we could force users to use functions</li>
+    <li>That way, the data would always be protected</li>
+    <li>The answer is called <em>data-hiding</em></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>The private circle</h1>
+  <ul>
+    <li>Look at <a href="circlePrivate.py">circlePrivate.py</a></li>
+    <li><a href = "../oop3/circlePrivate.py">python3</a></li>
+    <li>This program is very much like <a href="circle.py">circle.py</a></li>
+    <li>However, all references to <code>self.radius</code>
+        are now <code>self.__radius</code></li>
+    <li>The double underscore makes the property <em>hidden</em></li>
+    <li>The name is quietly changed by Python so data can ONLY be accessed
+        by methods</li>
+    <li>The only access to <code>__radius</code> is in the access methods</li>
+    <li>Even the constructor uses access methods</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Building a virtual property</h1>
+  <ul>
+    <li>Data hiding is great, but it would be nice to have a radius property</li>
+    <li>Python has a special function that creates a virtual property</li>
+    <li>the <em>property</em> function allows you to assign get and
+        set functions</li>
+    <li>Look at the main code starting at line 50</li>
+    <li>It looks to the programmer like we have a radius property again</li>
+    <li>There's also a diameter property!</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>The dirty secret of properties</h1>
+  <ul>
+    <li>Look at <a href = "circleProperty.py">circleProperty.py</a>
+    <li><a href = "../oop3/circleProperty.py">python3</a></li>
+    <li>When the user assigns a value to a property, the program passes
+        data through the associated setter</li>
+    <li>Likewise, data is passed through the getter when the user retrieves
+        a property</li>
+    <li>The end result is easy for the programmer, and it protects the data</li>
+    <li>You can even add a property for a virtual element like diameter</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Basic inheritance</h1>
+  <ul>
+    <li><a href="inheritance.mp3">Inheritance</a>
+        audio file</li>
+    <li>Classes can be based on other classes</li>
+    <li>Police cars are often based on standard cars</li>
+    <li>A subclass is <em>inherited</em> from a superclass</li>
+    <li>Subclasses generalize specializes the parent</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Cloning a class</h1>
+  <ul>
+    <li>look at <a href="cloneCircle.py">cloneCircle.py</a></li>
+    <li><a href = "../oop3/cloneCircle.py">python3</a></li>
+    <li>The program inherits the circleProperty module</li>
+    <li>Clone is a subclass of Circle</li>
+    <li>It does nothing!</li>
+    <li>Yet it still acts like the Circle</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Extending classes</h1>
+  <ul>
+    <li>Extend a class to add new features</li>
+    <li>All the properties and methods of the parent are retained</li>
+    <li>Any new methods will be added</li>
+    <li>If you overwrite a method of the parent, the child takes precedence</li>
+    <li>It's common to overwrite the constructor</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Building a better circle</h1>
+  <ul>
+    <li>Look at the <a href="superCircle.py">superCircle</a> program</li>
+    <li><a href = "../oop3/superCircle.py">python3</a></li>
+    <li>The superCircle extends the circle from circleProperty</li>
+    <li>It adds area and circumference</li>
+    <li>Both calculations use PI, so get access to the math library</li>
+    <li>Radius and Circumference are inherited from Circle</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Overwriting the constructor</h1>
+  <ul>
+    <li>SuperCircle has a constructor</li>
+    <li>It takes a radius parameter</li>
+    <li>It passes control to the Circle constructor</li>
+    <li>Initialize any new attributes (there aren't any in this case)</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Adding a Circumference</h1>
+  <ul>
+    <li>Typically you'll add new features to a child class</li>
+    <li>Begin with a <code>getCircumference()</code> method</li>
+    <li>This calculates and returns the circumference</li>
+    <li>Use the <code>property</code> function to tie getCircumferene to a property</li>
+    <li>Note that circumference is read-only (I didn't add a fset)</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Add an Area method and property</h1>
+  <ul>
+    <li>Area is much like circumference</li>
+    <li>Build a <code>getArea()</code> method</li>
+    <li>Tie it to the <code>area</code> property</li>
+    <li>area is also a read-only property</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Using the SuperCircle</h1>
+  <ul>
+    <li>Once the super circle is defined, it is easy to use</li>
+    <li>It has properties for radius, circumference, area, and diameter</li>
+    <li>User doesn't know (or care) which members are inherited</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Documenting a class</h1>
+  <ul>
+    <li>Note the single string at the beginning of the class def</li>
+    <li>You can also put a single string at every method or function</li>
+    <li>These strings become part of the documentation</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Documenting the superCircle class</h1>
+  <ul>
+    <li>Go to python console and import your library</li>
+    <li><code>from superCircle import *</code></li>
+    <li>Type <code>help(SuperCircle)</code></li>
+    <li>You'll see complete documentation for your class!</li>
+    <li><code>pydoc superCircle</code> does the same thing from the
+        command line</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>Building HTML documentation</h1>
+  <ul>
+    <li>The pydoc tool has another trick...</li>
+    <li>It lets you build web documentation for your programs</li>
+    <li><code>pydoc -w superCircle</code></li>
+    <li>This command builds <a href="superCircle.html">superCircle.html</a></li>
+  </ul>
+</div>
+
+<!-- div.slide>h1+ul>li*5 -->
+</div> <!-- end slide show -->>
+
+</body>
+</html>

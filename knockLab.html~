@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+    <title>First Java App</title>
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "http://www.cs.iupui.edu/~aharris/ajhStandard.css" />
+    <style type = "text/css">
+      code {
+        color: blue;
+      }
+      pre {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1em;
+        border: 1px groove black;
+        background-color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Knock-Knock Lab</h1>
+    
+    <h2>Overview</h2>
+    <p>
+      Create a version of the famous "Hello World" project - with a twist.
+      Write a program that asks the user's name, greets the user by name, and
+      tells a knock-knock joke.
+    </p>
+    
+    <h2>Purpose</h2>
+    <p>
+      The purpose of this lab is to get you acquainted with programming in 
+      general, and Java in particular. The program itself is not complex, 
+      but there are many factors to writing it successfully:
+    </p>
+    
+    <ul>
+      <li>Installing the Java Development Kit</li>
+      <li>Installing an editor</li>
+      <li>Writing the program</li>
+      <li>Compiling the program</li>
+      <li>Viewing the output</li>
+    </ul>
+    
+    <h2>The program</h2>
+    <p>
+      The actual program is quite simple. A transcript might look like this:
+      (<code>human input is in blue</code>)
+    </p>
+    <pre>
+Hi, What's you're name?
+<code>Andy</code>
+Here's a joke, Andy:
+Knock knock
+<code>who's there?</code>
+Luke
+<code>Luke who?</code>
+Luke through the keyhole and you'll find out!
+    </pre>
+
+    <p>
+      A perfect version of the program will do the following:
+    </p>
+    <ul>
+      <li>Ask the user his or her name</li>
+      <li>Repeat the user'sn name in a greeting</li>
+      <li>Engage in an 'interactive' knock knock joke</li>
+      <li>Take input for the user's part of the joke, but you
+          don't really have to do anything with the information.</li>
+    </ul>
+
+    <p>
+       The program will require the following elements: 
+    </p>
+    
+    <ul>
+      <li>A main method</li>
+      <li>A Scanner variable for input</li>
+      <li>A String variable for the user name</li>
+      <li>(optional) a second string for other input</li>
+      <li>A series of output statements (System.out.println)</li>
+    </ul>
+    
+    <h2>Turning it in</h2>
+    <p>
+      Please name this program Knock.java. Compile the file and combine 
+      Knock.java and Knock.class in a zip file called userid_knock.zip. (userid
+      will be your own userid of course.)  Turn the program in via oncourse.
+    </p>
+  </body>
+</html>

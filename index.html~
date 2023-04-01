@@ -1,0 +1,432 @@
+
+<meta http-equiv="Context-Type" content="text/html; charset=US-ASCII">
+
+<!DOCTYPE html PUBLIC 
+"-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+
+<title>CSCI 230</title>
+<link rel = "stylesheet"
+      type = "text/css"
+      href = "../ajhStandard.css" />
+
+</head>
+
+<body>
+
+<h1>CSCI 230</h1> 
+
+<div id = "menu">
+
+  <h2>Course Contents</h2>
+  <ul>
+    <li><a href = "#info">Course Information</a></li>
+    <li><a href = "#infoManipulator">Information Manipulator</a></li>
+    <li><a href = "#binary">Binary Notation</a></li>
+    <li><a href = "#moreNotation">More Notation</a></li>
+    <li><a href = "#instructions">Instructions</a></li>
+    <li><a href = "#basicPython">Basic Python</a></li>
+    <li><a href = "#variables">Variables</a></li>
+    <li><a href = "#conditions">Conditions</a></li>
+    <li><a href = "#methods">Methods</a></li>
+    <li><a href = "#OOP">Object-Oriented Programming</a></li>
+    <li><a href = "#Swing">Basic GUIs</a></li>
+    <!--<li><a href = "#"></a></li>-->
+  </ul>
+</div>
+
+<div class = "block"
+     id = "info">
+  <h1>Section Information</h1>
+  <p>
+    Welcome to CSCI 230 Computing I. Please look over the 
+    Schedule and syllabus.  Assignments and other links will
+    be made available on this site.
+  </p>
+  
+  <ul>
+    <li><a href = "230Syllabus.html">syllabus</a></li>
+    <li><a href = "finalProj.html">Final Project Definition</a></li>
+
+<!-- May confuse students on what videos to watch.
+    <li><a href = "http://synapse.cs.iupui.edu/Mediasite/Catalog/">
+        Course Videos</a>
+        At the moment, these require MS IE 6.0 or greater to view</li>
+-->
+  </ul>
+
+  <p>
+    Please note that the assignments listed here are alternatives to the
+    official assignments on oncourse.  I've kept them here as a backup
+    because sometimes oncourse does not work properly. The oncourse 
+    information is official. Any information here should be considered
+    additional resources.
+  </p>
+
+  <p>
+    Most of the examples used in this course are available as source code
+    on this page.  Check here if you're looking for a program I described
+    in class.
+  </p>
+  
+</div>
+
+<div class = "block" id = "infoManipulator" >
+  
+<h2>Introduction to Information Manipulator</h2>
+  
+<ul>
+  <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer/Viewers/Viewer240TL.aspx?mode=Default&peid=1c306e5e-3a43-49b0-8254-6113f46998c5&playerType=WM64Lite" target="_blank" >
+    Introduction to CSCI 230</a> (video)</li>
+  <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer/Viewers/Viewer240TL.aspx?mode=Default&peid=e7a1fb7e-c35b-4a13-88a1-b5a0bdbfcc67&playerType=WM64Lite" target="_blank" >
+    The Universal Information Manipulator</a> (video)</li>
+  <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer/Viewers/Viewer240TL.aspx?mode=Default&peid=0ee0fc18-666b-4fe4-af78-7cd67597df3a&playerType=WM64Lite" targest="_blank" >
+    Analog and Digital Information</a> (video)</li>
+</ul>  
+  
+</div>
+
+<div class="block" id="binary">
+
+<h2>Binary Notation</h2>
+
+<ul>
+  
+<!-- Replaced by Analog and Digital Video 
+  <li><a href = "AnalogDigital.ppt">Analog and Digital Data </a> Slides</li>
+  <li><a href = "analogDigital.mp3">Analog and Digital Data</a> Audio (listen while
+      viewing powerpoint.)</li>
+-->
+
+  <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer/Viewers/Viewer240TL.aspx?mode=Default&peid=81281148-ee95-45aa-bcde-35e86f911f71&playerType=WM64Lite" target="_blank">Binary to 
+      Base 10 Conv.</a> (video)</li>
+  <li><a href = "binaryDemos/binLights.html" target="_blank" >
+      Binary light switch demo</a></li>
+  <li><a href="binaryDemos/legoMover.html" target="_blank" >
+      legomover.html</a></li>
+  <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer/Viewers/Viewer240TL.aspx?mode=Default&peid=a931c260-b193-4278-a071-86943682f5c8&playerType=WM64Lite" target="_blank">Octal and 
+      Hexadecimal</a> (video)</li>
+  <li><a href = "binOctHex.html">Binary, Octal, Hex</a> slideshow </li>
+
+  <li><a href = "binOctHexA.mp3">Binary conversion</a> (mp3)</li>
+  <li><a href = "binOctHexB.mp3">Octal and hex conversion</a> (mp3)</li>
+
+  <li><a href="http://www.cs.iupui.edu/%7En241/readings/binconv.html" target="_blank" >binary 
+      conversion online notes</a></li>
+  <li><a href="http://www.cs.iupui.edu/%7En241/readings/hexconv.html" target="_blank" >
+      hexidecimal conversion online notes</a></li>
+  
+<!--
+  <li><a href = "http://corsair.cs.iupui.edu:18011/230/numConA.html">
+      Binary octal and hex conversion homework</a></li>
+-->
+  <li><a href = "binPractice.html">Binary Practice Form</a>
+      Use this online program to practice binary, octal, and hex 
+      conversions</li>
+</ul>
+
+</div>
+
+<div class = "block" id = "moreNotation">
+<h2>Negative and Floating Representation</h2>
+<ul>
+  <li><a href= "http://synapse.cs.iupui.edu/Mediasite/Viewer/Viewers/Viewer240TL.aspx?mode=Default&peid=e2ae384c-65df-41e4-9ba3-d282d40df89a&playerType=WM64Lite" target="_blank" >
+    Two's Complement Notation</a> (video)</li>
+  <li><a href = "twosComp.html">
+      Two's Complement practice tool</a> A tool for practicing two's complement translations</li>
+  <li><a href = "http://synapse.cs.iupui.edu/Mediasite/Viewer/Viewers/Viewer240TL.aspx?mode=Default&peid=e59ca112-36c0-46ba-b96d-0f477499e253&playerType=WM64Lite" target="_blank" >
+      Floating Point</a> (video)</li>
+  <li><a href = "twosCompFloat.html">Two's complement and floating point</a>
+      Notes</li>
+  
+  <li><a href = "twosComp.mp3">Two's complement</a> audio (use with Two's complement and floating point Notes)</li>
+  <li><a href = "float.mp3">Float</a> audio (use with Two's complement and floating point Notes)</li>
+  
+  <li><a href = "FloatConvert.html">Float conversion applet</a>
+      A tool for practicing floating point conversion</li>
+  <li><a href = "http://cs.iupui.edu/~aharris/n351/notes09/colorSwitch/colorSwitch.html">Color switch</a>
+      Viewing colors as binary switches</li>
+  <li><a href = "http://cs.iupui.edu/~aharris/230/colorChooser.html">Color chooser</a>
+      Tool for managing hexadecimal colors</li>
+</ul>
+</div>
+
+<div class = "block"
+     id = "instructions" >
+  <h2>Instructions and Machine Language</h2>
+  <ul>
+
+    <li><a href = "cowPig/cowPig.html">Cow and Pig</a>
+        A simple animation used to describe Boolean operators</li>
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer/Viewers/Viewer240TL.aspx?mode=Default&peid=96ae0f75-8b07-4a1b-ae8b-9c096d9f4f1c&playerType=WM64Lite" target="_blank" >
+      Logic Gates and Hardware</a> (video)</li>
+    <li><a href = "http://www.cs.iupui.edu/~aharris/n301/tinker.html">
+        tinker-toy logic gates</a></li>
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer/Viewers/Viewer240TL.aspx?mode=Default&peid=b86dbeb0-7128-40b8-b214-2a6b57b82276&playerType=WM64Lite" target="_blank" >
+      Basic Computer Architecture</a> (video)</li>
+    <li><a href = "http://math.hws.edu/TMCM/java/xLogicCircuits/index.html" target="_blank" >
+        Xlogic circuits</a> The circuit tool I demonstrated in class</li>
+    <li><a href = "http://math.hws.edu/TMCM/java/classes/xLogicCircuits.jar">
+        Xlogic circuits jar file</a> Download this to your desktop to run it.</li>
+
+    <li><a href = "http://www.cs.iupui.edu/~aharris/n301/vonArc/vonArc.html">
+        Von Neumann Architecture</a> simplified illustrations</li>
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer/Viewers/Viewer240TL.aspx?mode=Default&peid=980d7f71-9b89-49e3-a574-b266fe7e6b23&playerType=WM64Lite" target="_blank" >
+      Introduction to Machine Language</a> (video)</li>
+    <li><a href = "http://www.cs.iupui.edu/~aharris/n301/alg/tmcm-java-labs/labs/xComputerLab1.html">Intro to Machine Language</a> with xComputer</li>
+    <li><a href = "http://math.hws.edu/TMCM/java/classes/xComputer.jar">
+        xComputer jar file</a> Download this file to your desktop to run</li>
+    <li><a href = "http://www.cs.iupui.edu/~aharris/n301/assembler.html">
+        xComputer challenges</a></li>
+    <li><a href = "http://www.cs.iupui.edu/~aharris/n301/xMachine.html">
+        xComputer language summary</a></li>
+    <li><a href = "machineLanguageLab.html"> Machine Language Assignment</a></li>
+    <li><a href = "http://math.hws.edu/TMCM/java/DownloadingAndInfo.html">
+        Link to download xComputer and other apps</a> 
+        Use this link to find the appropriate jar file if you 
+        can't run Java in the browser.</li>
+  </ul>
+</div>
+
+<div class="block"
+     id = "basicPython">
+  <h2>Basic Python</h2>
+  <ul>
+    <li><a href="http://www.python.org/" target="_blank" >www.python.org</a></li>
+    <li><a href="http://www.portablepython.com" target="_blank" >Portable Python</a>
+      An easy Python installation for Windows recommended for this class
+    </li>
+    <li><a href = "http://www.portablepython.com/wiki/PortablePython1.1Py2.6.1">
+      Portable Python 2.6.1</a>This version of portable python has all the
+      libraries and editors demonstrated in class</li>
+    <li><a href="http://www.openbookproject.net/thinkcs/python/english2e/" target="_blank" >
+      How to think like a Computer Scientist (Python edition)</a>
+      Textbook for the Python portion of the class</li>
+    <li><a href="http://www.openbookproject.net/thinkcs/python/english2e/ch01.html" target="_blank" >
+      The way of the program</a> (reading)</li>
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer?peid=8bd6593f-2c8b-44aa-b62d-3d81fdf0ec14" target="_blank" >Intro to Python video</a>
+     (Note this was originally recorded for a game programming class)</li>
+    <li><a href = "http://www.cs.iupui.edu/~aharris/pygame/ch01/">
+    Notes and examples for PGL chapter 1</a></li>
+  </ul>
+</div>
+
+<div class="block">
+  <h2>Making an interactive program</h2>
+  <ul>
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer?peid=cc9c4aae-1625-4e90-8133-b95c63fb7de7" target="_blank" >
+        Your first interactive program</a> (video)</li>
+    <li><a href="http://www.openbookproject.net/thinkcs/python/english2e/ch02.html">
+        HTTLACS Chapter 2</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch01/">
+        PGL Chapter 1</a> (Notes and examples)</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch01/hello.py">
+        hello.py</a> Classic first program 
+        <a href = "http://cs.iupui.edu/~aharris/230/python/basic3/hello.py">python 3</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch01/cheeseShop.py">cheeseShop.py</a>
+        slightly more involved example of interaction
+        <a href = "http://cs.iupui.edu/~aharris/230/python/basic3/cheeseShop.py">python3</a></li>
+  </ul>
+</div>
+
+<div class="block">
+  <h2>String Manipulation</h2>
+  <ul>
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer?peid=947a2195-0f56-4e95-a167-750c909ed36a" target="_blank" >
+        Working with Strings </a> (video)</li>
+    <li><a href="http://openbookproject.net/thinkcs/python/english2e/ch07.html" target="_blank" >
+        HTTLACS Chapter 7 (Strings)</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch01/nameGame.py">
+        nameGame.py</a> Illustrates several string manipulation techniques</li>
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer?peid=35870a34-75c4-40a4-ac52-7b7777e2be9b" target="_blank" >
+        String Slicing and Interpolation </a> (video)</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch01/salamiSlice.py">
+        salamiSlice.py</a> String Slicing demonstration
+        <a href = "http://cs.iupui.edu/~aharris/230/python/basic3/salamiSlice.py">python3</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch01/interpolation.py">
+        interpolation.py</a> Formatted string interpolation demo
+        <a href = "http://cs.iupui.edu/~aharris/230/python/basic3/interpolation.py">python3</a></li>
+  </ul>
+</div>
+
+<div class="block">
+  <h2>Working with numeric data</h2>
+
+  <ul>
+    <li><a href = "http://synapse.cs.iupui.edu/Mediasite/Viewer?peid=9309f1a9-f81a-4d98-a5d3-8e36faa45e6e" target="_blank" >
+        Working wih numeric data</a> (video)</li>
+    <li><a href = "http://www.cs.iupui.edu/~aharris/pygame/ch02/">
+        PGL Chapter 2</a> notes and examples</li>
+    <li><a href="http://www.openbookproject.net/thinkcs/python/english2e/ch02.html" target="_blank" >
+        HTTLACS Chapter 2</a> (Variables and Expressions)</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch02/badAdd.py">
+        badAdd.py</a> Adding sometimes has unexpected results
+        <a href = "http://cs.iupui.edu/~aharris/230/python/basic3/interpolation.py">python3</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch02/intAdd.py">
+        intAdd.py</a> Python adds integer values as expected
+        <a href = "http://cs.iupui.edu/~aharris/230/python/basic3/intAdd.py">python3</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch02/intAddInterp.py">intAddInterp.py</a>
+        intAdd.py using string interpolation
+        </li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch02/calc.py">
+        calc.py</a> A calculator that works correctly with any input</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch02/calcInterp.py">calcInterp.py</a>
+        calc.py using string interpolation 
+        <a href = "http://cs.iupui.edu/~aharris/230/python/basic3/calc.py">python3</a></li>
+  </ul>    
+</div>
+
+<div class="block">
+  <h2>Managing lists</h2>
+  <ul>
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer?peid=7c789d8c-235f-4ca1-952c-2be42bcea96b" target="_blank" >
+        managing lists</a> (video)</li> 
+    <li><a href="http://openbookproject.net/thinkcs/python/english2e/ch09.html" target="_blank" >
+        HTTLACS chapter 9 </a> (lists and tuples)</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch02/inventory.py">
+        inventory.py</a> Building a list, adding and accessing items
+        <a href = "http://cs.iupui.edu/~aharris/230/python/basic3/inventory.py">python3</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch02/superhero.py">
+        superhero.py</a> Stepping through list with for loop
+        <a href = "http://cs.iupui.edu/~aharris/230/python/basic3/superhero.py">python3</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch02/rangeDemo.py">
+        rangeDemo.py</a> Building ranges (a special type of tuple)
+        <a href = "http://cs.iupui.edu/~aharris/230/python/basic3/rangeDemo.py">python3</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch02/wordReverse.py">
+        wordReverse.py</a> Example demonstrating string manipulation functions
+        <a href = "http://cs.iupui.edu/~aharris/230/python/basic3/wordReverse.py">python3</a></li>
+    <li><a href = "python/arrays">array demos</a></li>
+  </ul>
+</div>
+
+<div class="block">
+  <h2>Branching with if statements</h2>
+  <ul>
+    <li><a href = "python/cond3/">Python 3 condition demos</a></li>
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer?peid=9a8c3692-189c-440a-8cce-a0c5b97f5533" target="_blank" >
+      branching with if</a> (video)</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch03/">
+        PGL Chapter 3</a> notes and examples</a></li>
+    <li><a href="http://openbookproject.net/thinkcs/python/english2e/ch04.html" target="_blank" >
+        HTTLAC Chapter 4 (Conditions)</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch03/Guido.py">
+        Guido.py</a> Use if to see if user is named 'Guido'
+        <a href = "http://cs.iupui.edu/~aharris/230/python/cond3/Guido.py">python3</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch03/GuidoOrNot.py">
+        GuidoOrNot.py</a> Demonstrate if-else structure
+        <a href = "http://cs.iupui.edu/~aharris/230/python/cond3/GuidoOrNot.py">python3</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch03/LinusOrGuido.py">
+        LinusOrGuido.py</a> Making multiple comparisons with elif
+        <a href = "http://cs.iupui.edu/~aharris/230/python/cond3/LinusOrGuido.py">python3</a></li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch03/raceAnnouncer.py">
+        raceAnnouncer.py</a> Multiple comparison inside a loop
+        <a href = "">python3</a></li>
+  </ul>
+</div>
+
+<div class="block">
+  <h2>Using While loops and the Debugger</h2>
+  <ul>
+    <li><a href="http://openbookproject.net/thinkcs/python/english2e/ch06.html" target="_blank" >
+        HTTLACS Chapter 6</a> (Iteration)</li>
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer?peid=70fb8e13-4a6e-443b-99c1-febda53f737f" target="_blank" >
+        Working with while loops</a> (video)</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch03/minivan.py">
+        minivan.py</a> A basic while loop
+        <a href = "./python/miniVan3.py">miniVan3.py</a></li>
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer?peid=20713506-cb5e-4976-ab50-e4c3c53f5001" target="_blank" >
+        Building a main Loop</a> (video)</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch03/password.py">
+        password.py</a> A more sophisticated while loop
+        <a href = "./python/password3.py">password3.py</a></li>
+    <li><a href="http://cs.iupui.edu/~aharris/230/python/debug.py">
+        debug.py</a> Demonstration of command-line debugger</li>
+    <li><a href="http://cs.iupui.edu/~aharris/230/python/exceptDemo.py">
+        exceptDemo.py</a> Exception-handling demo
+        <a href = "./python/exceptDemo3.py">exceptDemo3.py</a></li>
+  </ul>
+</div>
+
+<div class="block">
+  <h2>Using functions</h2>
+  <ul>
+    <li><a href = "python/function3">Python3 versions of function examples</a></li>
+
+    <li><a href="http://synapse.cs.iupui.edu/Mediasite/Viewer?peid=40c2ee64-249f-44b0-84cf-5916993401df" target="_blank" >
+        Using Functions</a> (video)</li>
+    <li><a href="http://openbookproject.net/thinkcs/python/english2e/ch03.html" target="_blank" >
+        HTTLACS Chapter 3</a> (Functions)</li>
+    <li><a href="http://openbookproject.net/thinkcs/python/english2e/ch05.html" target="_blank" >
+        HTTLACS Chapter 5</a> (Fruitful Functions)</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch03/ants1.py">
+        ants1.py</a> Using functions to encapsulate code</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch03/ants2.py">
+        ants2.py</a> Passing data to and from functions</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch03/ants3.py">
+        ants3.py</a> Using a list to improve efficiency</li>
+    <li><a href="http://www.cs.iupui.edu/~aharris/pygame/ch03/scope.py">
+        scope.py</a> Understanding variable scope</li>
+  </ul>
+</div>
+
+<div class="block">
+  <h2>Objects</h2>
+  <ul>
+    <li><a href = "http://openbookproject.net/thinkcs/python/english2e/ch13.html" target="_blank" >
+        HTTLACS Chapter 13</a> Classes and objects</li>
+    <li><a href = "http://openbookproject.net/thinkcs/python/english2e/ch14.html" target="_blank" >
+        HTTLACS Chapter 14</a> Classes and functions</li>
+    <li><a href = "http://openbookproject.net/thinkcs/python/english2e/ch15.html" target="_blank" >
+        HTTLACS Chapter 15</a> Classes and methods</li>
+    <li><a href = "python/objects/objects.html">objects.html</a>
+        Slides, audio, and examples for Object-Oriented Programming</li>
+    <li><a href = "http://cs.iupui.edu/~aharris/230/python/oop3/">
+        Python3 versions of examples</a></li>
+  </ul>
+</div>
+
+<div class="block">
+  <h2>GUIs with Tk</h2>
+  <ul>
+    <li><a href="http://www.tutorialspoint.com/python/python_gui_programming.htm" target="_blank" >
+        TK documentation</a></li>
+    <li><a href="python/GUI-TK/gui.html">GUI TK demos</a> Slides, audio, and
+        examples for GUI programming with Tkinter</li>
+  </ul>
+</div>
+
+<div class = "block">
+  <h2>Data</h2>
+  <ul>
+    <li><a href = "python/data/data.html"> Managing data in Python</a></li>
+  </ul>
+</div>
+
+<div class = "block">
+  <h2>Python and the Web</h2>
+  <ul>
+    <li><a href = "python/web/web.html">Using Python to manage the WWW</a></li>
+  </ul>
+</div>
+
+<div class = "block">
+  <h2>Game Development</h2>
+  <ul>
+    <li><a href = "http://www.pygame.org/">pygame</a>
+        A very popular game development library</li>
+    <li><a href = "http://www.aharrisbooks.net/pythonGame">
+        Game Programming L Line</a>
+        My Python Game development book</li>
+    <li><a href = "portablepython.com">portable python</a>
+        Windows version of Python with pygame and many
+        other wonderful libraries pre-installed
+        (Use python 2.7 version...)</li>
+  </ul>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8"/>
+	<title>OOP Rectangle</title>
+	<script type = "text/javascript">
+		
+	/*   NOTE TO STUDENTS
+     *   This code is an example for a homework assignment
+     *   it is written in JavaScript, which is NOT the same
+     *   language you are using.  If you turn in this code,
+     *
+     *   A)  It will not work
+     *   B)  We will know you are being dishonest
+     *
+     *   It's OK to use this code as a starting place,
+     *   but it's definitely easier to do it the way we ask in
+     *   class.
+     *   
+     *   I've deliberately not put the comments in here that
+     *   normally go in my code. I want you to try to do that
+     *   part yourself.
+     *
+     *   I've also not used meaningful variable names, to
+     *   discourage you from using this code yourself.
+     *   
+     *   Please see me or a recitation leader if you're
+     *   struggling...
+     *
+     *
+     *   -Andy
+     */
+     
+		function A(w = 10, h = 10) {
+			this.c = w;
+			this.d = h;
+     	}//end Rectangle
+     	
+     	A.prototype.setWidth = function(w) {
+     		if (w <= 0) {
+     			alert("Excuse me. The width must be greater than zero. Otherwise, there is no rectangle. For now, we'll set the width to 10.");
+     			this.c = 10;
+     		}//end if
+     		else {
+     			this.c = w;
+     		}//end else
+     	}//end setWidth
+     	
+     	A.prototype.setHeight = function(h) {
+     		if (h <= 0) {
+     			alert("Excuse me. The height must be greater than zero. Otherwise, there is no rectangle. For now, we'll set the height to 10.");
+     			this.d = 10;
+     		}//end if
+     		else {
+     			this.d = h;
+     		}//end else
+     	}//end setHeight
+     	
+     	A.prototype.getWidth = function() {
+     		return this.c;
+     	}//end getWidth
+     	
+     	A.prototype.getHeight = function() {
+     		return this.d;
+     	}//end getHeight
+		
+		A.prototype.getArea = function() {
+			this.e = this.c * this.d;
+			return this.e;
+		}//end getArea
+		
+		A.prototype.getPerimeter = function() {
+			this.f = 2 * (this.c + this.d);
+			return this.f;
+		}//end getPerimeter
+		
+		A.prototype.getStats = function() {
+			var h = document.getElementById("output");
+			h.innerHTML += "width: " + this.getWidth() + "<br/>\n";
+			h.innerHTML += "height: " + this.getHeight() + "<br/>\n";
+			h.innerHTML += "area: " + this.getArea() + "<br/>\n";
+			h.innerHTML += "perimeter: " + this.getPerimeter() + "<br/>\n";
+		}//end getStats
+		
+		function main() {
+			var g = document.getElementById("sample");
+			g.innerHTML = "Sample Run" + "<br/>\n";
+     		var a = new A(5, 7);
+     		var h = document.getElementById("output");
+     		h.innerHTML = "Rectangle a:" + "<br/>\n";
+     		h.innerHTML += "area: " + a.getArea() + "<br/>\n";
+     		h.innerHTML += "perimeter: " + a.getPerimeter() + "<br/>\n";
+     		h.innerHTML += "" + "<br/>\n";
+     		var b = new A();
+     		b.c = 10;
+     		b.d = 20;
+     		h.innerHTML += "Rectangle b:" + "<br/>\n";
+     		b.getStats();
+     	}//end main
+     </script>
+</head>
+<body>
+	<h1>OOP Rectangle</h1>
+	
+	<button type = "button" onclick = "main()">begin</button>
+  
+	<p>
+    Press the button to see an example of the OOP rectangle assignment.
+    This example will work much like the one in class but it is written 
+    in a different language.
+	</p>
+  
+	<p>
+    Note that in JavaScript, we're using dialog boxes for input and
+    output because this is not a command-line driven language (at
+    least not in the way it's being used here.)  Your code does NOT
+    need to use pop-up dialogs. Command-line I/O is fine.
+	</p>
+  
+	<p>
+    Please try to build this algorithm on your own. I know it is
+    not difficult to see actual JavaScript code, but I have written
+    this example in a far more obtuse style than I normally use.
+    It will be far easier to build this algorithm up and then implement
+    in Python than it will be to reverse engineer my JS code.
+	</p>
+	
+	<h2 id = "sample"></h2>
+	
+	<div id = "output"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+<head>
+  <meta charset = "utf-8">
+  <title>Form</title>
+  <link rel = "stylesheet"
+        href = "static/style.css" />
+</head>
+
+<body>
+<h1>Temperature converter</h1>
+<form action = "/convertTwoWay"
+      method = "post">
+  <fieldset>
+    <label>Temperature</label>
+    <input type = "text"
+           value = "100"
+           name = "temp" />
+    <br />
+
+    <input type = "radio"
+           value = "toF"
+           name = "direction"
+           checked = "checked" /> Celcius to Farenheit
+
+    <input type = "radio"
+           value = "toC"
+           name = "direction"/> Farenheit to Celcius
+
+    <br />
+
+    <button type = "submit">
+      submit
+    </button>
+  </fieldset>
+</form>
+<p>
+    <img src = "../static/thermo.jpg"
+         alt = "thermometer image" />
+</p>
+</body>
+</html>
+
+

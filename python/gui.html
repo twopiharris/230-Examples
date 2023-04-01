@@ -1,0 +1,599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Graphic interfaces in Python / TK</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20050728" />
+<meta name="author" content="Eric A. Meyer" />
+<meta name="company" content="Complex Spiral Consulting" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>IUPUI Computer Science</h1>
+<h2>Graphic interfaces in Python / TK</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Graphic interfaces in Python / TK</h1>
+<h3>Andy Harris</h3>
+<h4>IUPUI Computer Science</h4>
+</div>
+
+<div class="slide">
+	<h1>Overview of GUIs</h1>
+	<ul>
+		<li><a href = "basicGUI.mp3">Audio</a>
+		    of GUI introduction</li>
+		<li>Modern OS have Graphical Interfaces</li>
+		<li>Can be OS-Specific or multi-platform</li>
+		<li>Changes the programming paradigm</li>
+		<li>Build and interface, respond to the user</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Introducing TK / Tkinter</h1>
+	<ul>
+		<li>TK is a multiplatform GUI toolset</li>
+		<li>It is unexciting but very easy to use</li>
+		<li>Works on all major OSs</li>
+		<li>Built into most versions of Python</li>
+		<li>Contained in the Tkinter module</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Building a Hello world TK app</h1>
+	<ul>
+		<li>Open <a href="helloTK.py">helloTK.py</a></li>
+		<li>Import the Tkinter module</li>
+		<li>Tk is the class that contains a top-level window</li>
+		<li>Create an instace of Tk object called app</li>
+		<li>Visual elements (called <em>widgets</em>) will be added to the window</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Adding a label</h1>
+	<ul>
+		<li>Tk has a class for each main GUI element</li>
+		<li>Build a label by making an instance of the Label class</li>
+		<li>First parameter of each TK widget is a container</li>
+		<li>For now, use the Tk object <code>app</code> as the container</li>
+		<li>Additional parameters are modifiers</li>
+		<li>Set the text attribute to some initial text</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Adding the Label</h1>
+	<ul>
+		<li>Add the label to the app with the <code>grid()</code> method</li>
+		<li><code>grid</code> is a <em>layout manager</em></li>
+		<li>It determines how an element is placed on the container</li>
+		<li>For now, go with default values</li>
+		<li>Later we learn how to get more precise placement</li>
+		<li>Widget will not appear until the layout manager is applied</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Starting the Main Loop</h1>
+	<ul>
+		<li>GUI programs use an <em>event-driven</em> model</li>
+		<li>The main loop is automatic</li>
+		<li>The program keeps running until the user quits</li>
+		<li>Quit with normal operating system tools (x in window frame)</li>
+		<li>Use the <code>mainloop()</code> method of the <code>app</code> object</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Running the program</h1>
+	<ul>
+		<li>Run <code>helloTK.py</code></li>
+		<li>A small window will appear</li>
+		<li>That window will contain the text "Hi there"</li>
+		<li>Close it in the normal way when you're done</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Making an Interactive interface</h1>
+	<ul>
+		<li><a href="helloIO.mp3">Audio for helloIO.mp3</a></li>
+		<li>Load and run <a href="helloIO.py">helloIO.py</a></li>
+		<li>This program adds new interface elements: button and entry</li>
+		<li>When the user clicks on the button, name is taken from entry</li>
+		<li>A custom greeting is added to the label</li>
+		<li>It's the simplest functional I/O example</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Introducing the Entry</h1>
+	<ul>
+		<li>It's like a text area</li>
+		<li>Single line of input</li>
+		<li>Add content with insert() function</li>
+		<li>Retrieve content with get()</li>
+		<li>Doesn't use the "text" property</li>
+		<li>Otherwise similar to the label</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Introducing buttons</h1>
+	<ul>
+		<li>Very much like labels</li>
+		<li>text property adjusts button's label</li>
+		<li>A command can be added as an event</li>
+		<li>More on that in a moment</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Creating behavior</h1>
+	<ul>
+		<li>The point of a button is to be clicked</li>
+		<li>Typically you'll assign a function to a button</li>
+		<li>Begin with the <code>sayHi()</code> function </li>
+		<li>Extract the content from the <code>txtInput</code> text box</li>
+		<li>Copy greeting to <code>text</code> property of <code>lblOutput</code></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Attach sayHi to btnClickMe</h1>
+	<ul>
+		<li>Somehow you need to indicate when to run the <code>sayHi()</code> function.</li>
+		<li>Button objects have a <code>command</code> property</li>
+		<li>Assign a function name to the command</li>
+		<li><em>DO NOT include Parentheses!</em></li>
+		<li>We don't want to <em>run</em> the function, just <em>reference</em> it</li>
+		<li>When the user clicks the button, the indicated function will run</li>
+		<li>Problem: function must be defined before it is assigned</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>The problem with helloIO.py</h1>
+	<ul>
+		<li><a href="guisAndOOP.mp3">Audio</a></li>
+		<li>This program works just fine</li>
+		<li>However, we know code should be in functions</li>
+		<li>Can we simply add a main function to clean up this code?</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>The problem with functions</h1>
+	<ul>
+		<li>Look at <a href="helloBroken.py">helloBroken.py</a></li>
+		<li>It looks like it ought to work</li>
+		<li>It's <em>exactly</em> the same as helloIO...</li>
+		<li>...except it has a main function</li>
+		<li>(which is a good thing)</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Why it doesn't work...</h1>
+	<ul>
+		<li><code>sayHi</code> must be defined before <code>main</code></li>
+		<li>...because the main function needs to know what <code>sayHi</code> is</li>
+		<li>However, <code>sayHi</code> needs access to <code>txtInput</code></li>
+		<li>It also needs access to <code>lblOutput</code></li>
+		<li>These are defined in <code>main</code>!!</li>
+		<li>We have a circular reference...</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>There are many solutions...</h1>
+	<ul>
+		<li>Global variables</li>
+		<li>Function prototyping</li>
+		<li>Not using functions</li>
+		<li>Object-Oriented Programming</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Using OOP</h1>
+	<ul>
+	  <li><a href = "guisAndOOP.mp3">Audio</a> for GUIs and OOP</li>
+		<li>The OOP solution is the most satisfying</li>
+		<li>Make the entire program a <em>subclass</em> of the Tk object</li>
+		<li>Make all the widgets properties of the main class</li>
+		<li>All methods have access to all widgets</li>
+		<li>Definition order becomes a non-issue</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Looking over the helloOOP version</h1>
+	<ul>
+		<li>Load <a href="helloOOP.py">helloOOP.py</a></li>
+		<li>Most of the program is a class definition</li>
+		<li>Define <code>App</code> as a new class based on Tk</li>
+		<li>Make and run an instance of App</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Building a new class</h1>
+	<ul>
+		<li>Create an App class based on Tk</li>
+		<li>Initialize the parent (Tk) class</li>
+		<li>Then add other widgets as instance variables</li>
+		<li><code>sayHi</code> is a method</li>
+		<li>Main function simply instantiates App</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Making widgets as instance variables</h1>
+	<ul>
+		<li>Use the <code>self</code> modifier for each widget</li>
+		<li>Attach each widget to the class itself</li>
+		<li>The command for the button is a method of the <code>self</code> object</li>
+		<li>The method can be defined after it is referred to</li>
+		<li>...because the whole class is constructed at once.</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Most GUI programs use a form of OOP</h1>
+	<ul>
+		<li>Widgets naturally are classified as objects</li>
+		<li>Inheritance is quite useful</li>
+		<li>Code re-use, encapsulation, and polymorphism are helpful</li>
+		<li>Most GUI systems are already based on OOP</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Making a more sophisticated GUI</h1>
+	<ul>
+		<li><a href="gradeCalc.mp3">Audio</a>
+		<li>Sometimes you'll want a more sophisticated layout</li>
+		<li>Load and run <a href="gradeCalc.py">gradeCalc.py</a></li>
+		<li>Two columns</li>
+		<li>Multiple fonts</li>
+		<li>Color changes</li>
+		<li>widget size and alignment</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Encapsulating the Constructor</h1>
+	<ul>
+		<li>Look at App constructor</li>
+		<li>Most of work is in setting up GUI</li>
+		<li>Set up headerFont once</li>
+		<li>Pass control to methods for clarity</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Setting up a font</h1>
+	<ul>
+		<li>In Tk, a font is a tuple of three values</li>
+		<li>Font name used by system</li>
+		<li>Font size (in points)</li>
+		<li>Font modifiers (if needed)</li>
+		<li>It may be easiest to pre-store these values for re-use</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Building anonymous labels</h1>
+	<ul>
+		<li>Labels can be anonymous (no name)</li>
+		<li>IF - they are never changed or referred to in code</li>
+		<li>Lines 25, 26 illustrate an anonymous label</li>
+		<li>Don't create a variable</li>
+		<li>chain the <code>grid</code> command directly to the Label</li>
+		<li>Don't do this with meaningful elements</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Applying a Special font</h1>
+	<ul>
+		<li>The text "Lab Assignments" is displayed in a special font</li>
+		<li>You can assign a font to most widgets</li>
+		<li>The font is defined as an attribute like text</li>
+		<li>A font is a tuple containing font name, size, and modifiers</li>
+		<li>In line 25, I'm using a predefined font (<code>self.headerFont</code>)</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Spanning multiple columns</h1>
+	<ul>
+		<li>The "Lab Assignments" text is twice as wide as other elements</li>
+		<li>I set the columnspan to 2</li>
+		<li>It's much like using table-based layout in HTML</li>
+		<li>Note that columnspan is a parameter of the <code>grid()</code> manager</li>
+		<li>Also note it's <code>columnspan</code>, not <code>colSpan</code></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Explicitly setting the row and column</h1>
+	<ul>
+		<li><code>grid</code> is a <em>layout manager</em></li>
+		<li>It controls how widgets are displayed on the application</li>
+		<li>Tkinter has several layout managers</li>
+		<li>Grid is the most commonly used</li>
+		<li>It allows you to select a particular row and column for each widget</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Selecting a particular position</h1>
+	<ul>
+		<li>the <code>grid</code> manager has parameters:</li>
+		<li><code>row</code> and <code>column</code> indicate position of the widget</li>
+		<li>Number of rows and columns automatically calculated by the parent</li>
+		<li>Default is next row, column zero</li>
+		<li><code>rowspan</code> and <code>columnspan</code> indicate span</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Inserting data into an entry field</h1>
+	<ul>
+		<li><code>Entry</code> doesn't use the <code>text</code> mechanism</li>
+		<li>It uses <code>insert(position, text)</code> to add new content</li>
+		<li>Position is cursor placement (0 is beginning of field)</li>
+		<li>text is the text to add</li>
+		<li>Use <code>get()</code> to retrieve data from an entry field</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Changing colors</h1>
+	<ul>
+		<li>You can change colors in widget parameters</li>
+		<li>fg sets foreground color</li>
+		<li>bg sets background color</li>
+		<li>Use standard HTML hex codes</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Changing the position with anchor</h1>
+	<ul>
+		<li>Most widgets have an <code>anchor</code> attribute</li>
+		<li>This is used to set the alignment of the cell</li>
+		<li>Use cardinal directions to determine alignment</li>
+		<li>EG <code>"w"</code> is left-aligned</li>
+		<li><code>"we"</code>is justified</li>
+		<li>default value is centered</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Using sticky for placement</h1>
+	<ul>
+		<li>The widget size and placement is controlled by <code>grid</code></li>
+		<li>It has a <code>sticky</code> attribute</li>
+		<li>This determines the size and placement of the widget in the cell</li>
+		<li>Use <code>"ne"</code> to force the widget in the upper-right corner</li>
+		<li>Use <code>"ew"</code>to take up the entire horizontal space</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Adding a border</h1>
+	<ul>
+		<li>The <code>grid</code> manager also allows you to place a border</li>
+		<li>use the <code>relief</code> attribute</li>
+		<li>Options are flat, raised, sunken, groove, ridge</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Calculating the grades</h1>
+	<ul>
+		<li>The grade calculation is standard GUI fare</li>
+		<li>Activated by a button click</li>
+		<li>Read data from text fields</li>
+		<li>Calculate output</li>
+		<li>Place in output labels</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Introducing other widgets</h1>
+	<ul>
+		<li><a href="otherWidgets.mp3">Audio</a></li>
+		<li>Tkinter supports many other widgets</li>
+		<li>load and run <a href="widgetDemo.py">widgetDemo.py</a> for examples</li>
+		<li>This shows most of the common tk widgets</li>
+		<li>Click buttons to see results</li>
+		<li>First button shows how to retrieve content from other elements</li>
+		
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>IntVars</h1>
+	<ul>
+		<li>Tk comes from TCL/TK</li>
+		<li>This language has its own form of integers</li>
+		<li>TK integers can be mapped directly to widgets</li>
+		<li>Use the <code>IntVar()</code> constructor to create an intVar</li>
+		<li><code>IntVars</code> are normally created as instance variables</li>
+		<li>Use <code>get()</code> and <code>set()</code> methods of intVar</li>
+		<li>IntVar and associated widget automatically linked</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Check Buttons</h1>
+	<ul>
+		<li>A check button can be checkend or not checked</li>
+		<li>It's normally associated with an <code>intVar</code></li>
+		<li>Value of intVar is 1 if checked, 0 if not</li>
+		<li>Use <code>variable</code> attribute to set variable</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>List boxes</h1>
+	<ul>
+		<li>A list box can contain a list of possible values</li>
+		<li>Only the values in the list can be chosen</li>
+		<li><code>height</code> determines the number of visible rows</li>
+		<li>Scrollbar must be added manually if desired
+		    (<a href="http://effbot.org/zone/tkinter-scrollbar-patterns.htm">
+				tutorial</a>)</li>
+		<li>Add elements with <code>insert()</code> method (first parameter is position)</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Reading a list box</h1>
+	<ul>
+		<li><code>curselection()</code> is a tuple containing all selected indices</li>
+		<li>if nothing is selected, it's an empty tuple ()</li>
+		<li><code>get()</code> returns the value associated with an index</li>
+		<li>You may need to extract a scalar from the tuple</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Text Element</h1>
+	<ul>
+		<li>Multi-line list box (like HTML textarea)</li>
+		<li>sophisticated selection, code highlighting features</li>
+		<li>Use <code>height</code> and <code>width</code> to set size (in characters)</li>
+		<li>Use <code>insert()</code> to insert text</li>
+		<li>First parameter is coordinate: row.column</li>
+		<li>row starts at 1(!?!)</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Reading contents of a text field</h1>
+	<ul>
+		<li>Use the <code>get()</code> method</li>
+		<li>First parameter is beginning of text to retrieve</li>
+		<li>1.0 for beginning of text field</li>
+		<li>Second parameter is last character to retrieve</li>
+		<li>Use built-in constant <code>END</code></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Radio Buttons</h1>
+	<ul>
+		<li>Must occur in a group</li>
+		<li>Attach several buttons to same intVar</li>
+		<li>Give each button a different value</li>
+		<li>IntVar contains the value of the selected button</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Scale</h1>
+	<ul>
+		<li>Like a standard scroll bar</li>
+		<li>Used to retrieve an integer value</li>
+		<li>Orient can be HORIZONTAL or VERTICAL</li>
+		<li><code>from_, to</code> set range</li>
+		<li>Read with the <code>get()</code> method</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Spin Box</h1>
+	<ul>
+		<li>Like an Entry</li>
+		<li>Can have multiple values</li>
+		<li>Only one value at a time is visible</li>
+		<li>User can enter something else</li>
+		<li>Use the <code>values</code> attribute to add a tuple of values</li>
+		<li>Use the <code>get()</code> method to retrieve the current value</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Dialog boxes</h1>
+	<ul>
+		<li>The <code>tkMessageBox</code> module includes several dialogs</li>
+		<li><code>showinfo() displays a modal dialog</code></li>
+		<li><code>askquestion()</code> asks a yes or no question</li>
+		<li>Returns "yes" or "no"</li>
+		<li>Dialogs block code until they are completed</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Color dialog</h1>
+	<ul>
+		<li>import <code>tkColorChooser</code> module</li>
+		<li><code>askcolor()</code> method pops up a dialog</li>
+		<li>returns a tuple</li>
+		<li>0 value is a color list {r, g, b}</li>
+		<li>1 value is an html-style color string #rrggbb</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Opening a second window</h1>
+	<ul>
+		<li>Use the <code>TopLevel</code> widget to open a second window</li>
+		<li>It's often best to subclass TopLevel, as windows can be complex</li>
+		<li>New window is subservient</li>
+		<li>(Closing the main app closes this window)</li>
+		<li>Add any other widgets you want to second window</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>More Tk elements are available</h1>
+	<ul>
+		<li>Canvas - for vector graphics</li>
+		<li>Frame - an inner container for other elements</li>
+		<li>Menu / MenuButton - used to build menus</li>
+		<li>Scrollbar - used to add scrolling features to other widgets</li>
+		<li>LabelFrame - a frame with a title bar</li>
+	</ul>
+</div>
+
+<!-- div.slide>h1+ul>li*5 -->
+
+</div> <!-- end slide show -->
+
+</body>
+</html>

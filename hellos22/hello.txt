@@ -1,0 +1,10 @@
+Hello world
+Ask user's name
+use it in a greeting
+
+make sure we can do input and output
+ask the user for her name
+put that name in a text variable
+print a greeting containing that name
+
+

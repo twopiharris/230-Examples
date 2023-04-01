@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+    <title>Cryptography (functions) Lab</title>
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "../ajhStandard.css" />
+    <style type = "text/css">
+      dt {
+        font-weight: bold;
+      }
+      pre {
+        background-color: white;
+        border: 3px double black;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1em;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <h1>Cryptography Lab</h1>
+    <div class = "singlePanel">
+      <h2>Objectives</h2>
+      <p>
+        Create a program that assists in a basic form of cryptography, a 
+        substitution cypher. Write a program that will accept a phrase and
+        convert it into code by substituting letters according to a key.
+      </p>
+      
+      <p>
+        This program will also be an example of functions. You will be given
+        a main function body. This function refers to a number of other functions
+        which you will have to create. It's part of your job to figure out how
+        these functions should be created and what their parameters and output
+        should be.
+      </p>
+      
+      <p>
+        The program is based on a standard text-based menu. You'll need to create
+        methods (function) to display the menu, get input from it, and handle the 
+        details. Your program should encrypt and decrypt messages.
+      </p>
+
+      <h2>Sample Run</h2>
+      <p>
+        Here's a sample run of the basic program in action.
+      </p>
+      
+      <pre>
+Crypto Machine
+
+Select an option
+0) Quit
+1) Encrypt a phrase
+2) Decrypt a phrase
+
+Please enter your choice
+1
+Please enter unencrypted phrase
+Java Rocks
+RUDUEQWFN
+Crypto Machine
+
+Select an option
+0) Quit
+1) Encrypt a phrase
+2) Decrypt a phrase
+
+Please enter your choice
+2
+Please enter encrypted phrase
+RUDUEQWFN
+JAVAROCKS
+Crypto Machine
+
+Select an option
+0) Quit
+1) Encrypt a phrase
+2) Decrypt a phrase
+
+Please enter your choice
+0
+Goodbye!
+        
+      </pre>
+      <h2>Starter Code</h2>
+      <p>
+        You may copy and paste the following code into your editor to get
+        started. You may also type the code by hand, but your main method
+        must be similar to the one posted here:
+      </p>
+      
+      <pre>
+import java.util.Random;
+import java.util.Scanner;
+
+public class Crypto {
+
+  static Scanner input = new Scanner(System.in);
+  static String alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  static String key = "UBWKOVGAPRFJLCQHZENSXDMYTI";
+    
+  public static void main(String[] args) {
+    boolean keepGoing = true;
+    while(keepGoing){
+
+      String response = menu();
+
+        if (response.equals("1")){
+          System.out.println("Please enter unencrypted phrase");
+          String plain = input.nextLine();
+          plain = plain.toUpperCase();
+          System.out.println(encrypt(plain));
+
+        } else if (response.equals("2")){
+          System.out.println("Please enter encrypted phrase");
+          String code = input.nextLine();
+          code = code.toUpperCase();
+          System.out.println(decrypt(code));
+
+        } else if (response.equals("0")){
+          System.out.println("Goodbye!");
+          keepGoing = false;
+
+        } else {
+          System.out.println("Sorry. I didn't understand");
+        } // end if
+      } // end while
+   } // end main    
+} // end Crypto
+    
+      </pre>
+      
+      <h2>Notes</h2>
+      <p>
+        Please keep the following ideas in mind:
+      </p>      
+      <dl>
+        <dt>This is a substitution cypher</dt>
+        <dd>Each letter is replaced by another letter with no repetition</dd>
+        
+        <dt>Ignore spaces and punctuation</dt>
+        <dd>
+          You <em>must</em> account for spaces (I ignored them, but there are other
+          legitimate responses.)
+          <br /> <br />
+          The best program will also account for punctuation and other symbols. (Ignoring
+          them is fine.)
+        </dd>        
+        
+        <dt>Manage Capitalization</dt>
+        <dd>
+          In most cryptography applications, all letters are converted to upperCase.
+          Please follow this convention or deal with potential case conversion problems
+          in another way.
+        </dd>
+        
+        <dt>Use Methods</dt>
+        <dd>
+          You may not make significant changes to the main method. Determine which 
+          functions are necessary and create them. (The blackbelt project does allow for 
+          one slight modification, noted below.) <em>Do not turn in a program with
+          only a main() method!!</em> 
+        </dd>
+        
+        <dt>Pass data between methods</dt>
+        <dd>
+          Your methods may require some input and return some output. Part of the 
+          task is to determine how the methods are to be created.
+        </dd>
+        
+        <dt>Using a key</dt>
+        <dd>
+          There's several workable answers, but I used a string with all the alphabet
+          characters and a second string with a "scrambled" version of the alphabet.          
+        </dd>
+        
+        <dt>Useful String methods</dt>
+        <dd>
+          This program is easier if you use appropriate methods of the String object.
+          I made use of the following methods:
+          <ul>
+            <li>length()</li>
+            <li>charAt()</li>
+            <li>indexOf()</li>
+          </ul>
+        </dd>
+        
+        <dt>Don't send spy messages with this</dt>
+        <dd>
+          The encryption used here is laughably weak. This is an interesting exercise
+          in cryptography, but it's nowhere near useable as an encryption tool. 
+          Don't encode your secret recipe with this thing and expect it to remain
+          secret.
+        </dd>
+        
+        <dt>Test your program</dt>
+        <dd>
+          The best way to test your program is to encrypt a phrase, and then decrypt
+          the encoded phrase to see if you got the original (sans spaces and other
+          punctuation.)
+        </dd>
+      </dl>
+      
+      <h2>Black Belt Option</h2>
+      <p>
+        You can improve this program dramatically by adding the ability to generate 
+        a new random key.  The new key should have the following characteristics:
+      </p>
+      
+      <ul>
+        <li>It should be 26 characters long</li>
+        <li>It should contain all 26 letters</li>
+        <li>The order of the letters should be randomly determined</li>
+        <li>No letters repeat or are missing</li>
+      </ul>
+      
+      <p>
+        You can add a new menu item to allow the user to generate a random key.
+        You'll need a new function for the random key. You'll also need to modify
+        the main() function and the menu to accept new input.
+      </p>
+      
+      <p>
+        Note that array manipulation is not necessary for this project. All work can be done
+        directly with strings. You may need some exception-handling, though.
+      </p>
+    </div>
+  </body>
+</html>

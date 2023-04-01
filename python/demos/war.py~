@@ -1,0 +1,56 @@
+""" cardGame.py
+    basic card game framework
+    keeps track of card locations for as many hands as needed
+"""
+from random import *
+
+NUMCARDS = 52
+DECK = 0
+PLAYER = 1
+COMP = 2
+
+cardLoc = [0] * NUMCARDS
+suitName = ("hearts", "diamonds", "spades", "clubs")
+rankName = ("Ace", "Two", "Three", "Four", "Five", "Six", "Seven", 
+            "Eight", "Nine", "Ten", "Jack", "Queen", "King")
+playerName = ("deck", "player", "computer")
+
+def main():
+  clearDeck()
+
+  for i in range(5):
+    assignCard(PLAYER)
+    assignCard(COMP)
+
+  showDeck()
+  showHand(PLAYER)
+  showHand(COMP)          
+
+def clearDeck():
+  for cardPos in cardLoc:
+    cardPos = DECK
+
+def showDeck():
+  for cn, cardPos in enumerate(cardLoc):
+    print("{}) {}".format(cn, cardPos))
+
+def assignCard(hand):
+  #keepGoing until we get a card in the deck 
+  keepGoing = True
+  while keepGoing:
+    #pick a random number 
+    cn = randrange(NUMCARDS)
+    
+    if cardLoc[cn] == DECK:
+      #this card is available, so pick it and get out
+      cardLoc[cn] = hand
+      keepGoing = False
+
+def showHand(hand):
+  for cn, cardPos in enumerate(cardLoc):
+    if cardPos == hand:
+      print("{}".format(cn))
+
+  print()
+
+ 

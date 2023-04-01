@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+<head>
+  <title>Floating point conversion practice</title>
+  <meta charset = "utf-8">
+  <style type = "text/css">
+  form {
+    width: 600px;
+    margin: auto;
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  } 
+
+  label {
+    grid-column: 1/2;
+    text-align: right;
+    padding-right: 1em;
+  }
+  
+  input {
+    grid-column: 2/3;
+  } 
+
+  output {
+    grid-column: 2/3;
+    background-color: white;
+    border: 1px solid black;
+    padding-left: .5em;
+  }
+
+  button {
+    grid-column: 1/3;
+    background-color: lightgray;
+  } 
+  </style>
+
+  <script lang = "javascript">
+    // Andy Harris, Feb 2021
+
+    function calculate(){
+
+      if (checkAll()){
+
+        sm = document.getElementById("txtSM").value;
+        man = document.getElementById("txtMan").value;
+        sExp = document.getElementById("txtSexp").value;
+        exp = document.getElementById("txtExp").value;
+        bin = sm + man + sExp + exp;
+
+        result = binToDec(sm, man, sExp, exp);
+
+        document.getElementById("outBin").innerText = bin;
+        document.getElementById("outDec").innerText = result;
+
+      } // end if        
+
+    } // end calculate
+
+    function binToDec(sm, man, sExp, exp){
+      // calculate results
+      result = parseInt(man, 2);
+
+      //check for sign of mantissa
+      if (sm == "1"){
+        result *= -1;
+      } // end if
+
+      // get exponent
+      ex = parseInt(exp, 2);
+      if (sExp == "1"){
+        ex *= -1;
+      } // end if
+      
+      result = result * Math.pow(2, ex);
+      return result;
+    }  // end binToDec
+
+
+    function checkInput(elementName, element, length){
+      result = true;
+      val = document.getElementById(elementName).value;
+      let re = /^[01]+$/
+      result = re.test(val);
+      if (!result){
+        alert(element + " is not binary");
+        result = false;
+      } // end if
+      if (val.length != length){
+        alert(element + " should be " + length + " bits long");
+        result = false;
+      } // end if
+      return result;
+    } // end checkInput 
+
+    function checkAll(){
+      result = false;
+      if (checkInput("txtSM", "sign of mantissa", 1)){
+        if (checkInput("txtMan", "mantissa", 4)){
+          if (checkInput("txtSexp", "sign of exponent", 1)){
+            if (checkInput("txtExp", "exponent", 2)){
+              result = true;
+            } // end if
+          } // end if
+        } // end if
+      } // end if
+      return result;
+    } // end checkAll
+
+    function generate(){
+      sm = makeBin(1);
+      man = makeBin(4);
+      sExp = makeBin(1);
+      exp = makeBin(2);
+      bin = sm + man + sExp + exp;
+
+      document.getElementById("txtSM").value = sm;
+      document.getElementById("txtMan").value = man;
+      document.getElementById("txtSexp").value = sExp;
+      document.getElementById("txtExp").value = exp;
+      document.getElementById("outBin").value = bin;
+      document.getElementById("outDec").innerText = "";
+    } // end generate
+  
+    function makeBin(length){
+      outString = "";
+      for (i = 0; i < length; i++){
+        // returns a binary string of the given length
+        val = parseInt(Math.random()*2);
+        outString += val;
+      } // end for
+      return outString;
+    } // end makeBin
+   
+    function makeDec(){
+      // generate a decimal that can be resolved
+      // into this format
+      sm = makeBin(1);
+      man = makeBin(4);
+      sExp = makeBin(1);
+      exp = makeBin(2);
+
+      // clear the form
+      document.getElementById("txtSM").value = "0";
+      document.getElementById("txtMan").value = "0000";
+      document.getElementById("txtSexp").value = "0";
+      document.getElementById("txtExp").value = "00";
+      document.getElementById("outBin").value = "";
+
+      result = binToDec(sm, man, sExp, exp);
+      bin = sm + man + sExp + exp;
+      //write the 'answer' to the console
+      console.log(bin);
+
+      document.getElementById("outDec").innerText = result;
+
+      alert("Try to make this: " + result);
+    } // end make dec
+  </script>
+      
+
+</head>
+
+<body>
+  <h1>Floating point conversion</h1>
+
+  <form>
+
+    <label>sign of mantissa (1)</label>
+    <input type = "text"
+           id = "txtSM"
+           value = "0" />
+
+    <label>mantissa (4)</label>
+    <input type = "text"
+           id = "txtMan"
+           value = "0000" />
+
+    <label>sign of exponent (1)</label>
+    <input type = "text"
+           id = "txtSexp"
+           value = "0">
+
+    <label>exponent (2)</label>
+    <input type = "text"
+           id = "txtExp"
+           value = "00" />
+
+    <label>binary value</label>
+    <output id = "outBin">
+    </output>
+
+    <label>decimal value</label>
+    <output id = "outDec">
+    </output>
+
+    <button type = "button"
+            onclick = "calculate()">
+      calculate 
+    </button>
+
+    <button type = "button"
+            onclick = "generate()">
+      generate a problem
+    </button>
+
+    <button type = "button"
+            onclick = "makeDec()">
+      generate a decimal challenge
+    </button>
+
+  </form>
+
+  <div id = "instructions">
+    <h2>Instructions</h2>
+    <p>
+      This is a tool to experiment with a simplified floating point format
+      described in CSCI 23000 at IUPUI.  It is an eight-bit format with
+      a mantissa and exponent in signed magnitude notation.
+    <p>
+
+    <p>
+      The format is ABBBBCDD where:
+    </p>
+
+    <ul>
+      <li>A is the sign of the mantissa (0 for positive, 1 for negative)</li>
+      <li>B is the mantissa, four digits of binary</li>
+      <li>C is the sign of the exponent (0 for positive, 1 for negative)</li>
+      <li>D is the exponent, two digits of binary</li>
+    </ul>
+
+    <p>
+      Enter values into the text fields, noting the program requires binary input
+      of the given length. Incorrect inputs will be ignored. Hit the 'calculate' 
+      button to calculate the results of the current inputs.  
+    </p> 
+
+    <p>
+      Use the "generate a problem" button to generate a random set of legal inputs.
+    </p>
+
+    <p>
+      Use the "generate a decimal challenge" to get a decimal value.  This value will
+      have at least one solution, and perhaps more than one.  You might want to write
+      the number down and experiment until you can find a way to generate it.
+    </p>
+
+    <p>
+      Note that each binary input has exactly one correct result, but a decimal number
+      could potentially have more than one solution in this floating-point notation.
+    </p>
+
+    <p>
+      This notation is far too limited for use in real life, but it is a good simplified
+      example of how floating point notations work.
+    </p>
+</body>
+</html>
+           

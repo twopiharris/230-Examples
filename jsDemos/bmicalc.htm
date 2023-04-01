@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8"/>
+	<title>Body Mass Index</title>
+	<script type = "text/javascript">
+	
+	/*   NOTE TO STUDENTS
+     *   This code is an example for a homework assignment
+     *   it is written in JavaScript, which is NOT the same
+     *   language you are using.  If you turn in this code,
+     *
+     *   A)  It will not work
+     *   B)  We will know you are being dishonest
+     *
+     *   It's OK to use this code as a starting place,
+     *   but it's definitely easier to do it the way we ask in
+     *   class.
+     *   
+     *   I've deliberately not put the comments in here that
+     *   normally go in my code. I want you to try to do that
+     *   part yourself.
+     *
+     *   I've also not used meaningful variable names, to
+     *   discourage you from using this code yourself.
+     *   
+     *   Please see me or a recitation leader if you're
+     *   struggling...
+     *
+     *
+     *   -Andy
+     */
+     
+     	function round(a) {
+     		a = a * 100;
+     		a = Math.round(a);
+     		a = a / 100;
+     		return a;
+     	}//end round
+     
+     	function calculate() {
+     		var b = document.getElementById("height");
+     		var c = document.getElementById("weight");
+     		var d = Number(b.value);
+     		var e = Number(c.value);
+     		if (isNaN(d)) {
+     			alert("Height must be a number.");
+     		}//end if
+     		else if (isNaN(e)) {
+     			alert("Weight must be a number.")
+     		}//end else if
+     		else if (d <= 0) {
+     			alert("You cannot have negative or 0 height.");
+     		}//end if
+     		else if (e < 0) {
+     			alert("You cannot have negative weight.");
+     		}//end else if
+     		else {
+     			var f = e * 703 / Math.pow(d,2);
+     			f = round(f);
+     			var g = document.getElementById("bmi");
+     			g.innerHTML = f;
+     			var h = document.getElementById("status");
+     			
+     			if (f <= 18.5) {
+     				h.innerHTML = "underweight";
+     			}//end if
+     			else if (f <= 24.99) {
+     				h.innerHTML = "normal";
+     			}//end else if
+     			else if (f <= 29.99) {
+     				h.innerHTML = "overweight";
+     			}//end else if
+     			else if (f >= 30) {
+     				h.innerHTML = "obese";
+     			}//end else if
+     		}//end else
+     	}//end calculate
+	
+	</script>
+</head>
+<body>
+	<h1>Body Mass Index</h1>
+	
+	<p>
+    Use the input boxes and buttons below to see an example of the bmi calculator assignment. This example will work much like the one in 
+    class but it is written in a different language.
+	</p>
+  
+	<p>
+    Note that in JavaScript, we're using dialog boxes for input and
+    output because this is not a command-line driven language (at
+    least not in the way it's being used here.)  Your code does NOT
+    need to use pop-up dialogs.  Command-line I/O is fine.
+	</p>
+  
+	<p>
+    Please try to build this algorithm on your own. I know it is
+    not difficult to see actual JavaScript code, but I have written
+    this example in a far more obtuse style than I normally use.
+    It will be far easier to build this algorithm up and then implement
+    in Python than it will be to reverse engineer my JS code.
+	</p>
+	
+	<h2>Sample Run</h2>
+	
+	<table>
+		<tr>
+			<td><h3>Parameters</h3></td>
+		</tr>
+		<tr>
+			<td>Height (inches)</td>
+			<td><input type = "text" id = "height"/></td>
+		</tr>
+		<tr>
+			<td>Weight (pounds)</td>
+			<td><input type = "text" id = "weight"/></td>
+		</tr>
+	
+		<tr>
+			<td><button type = "button" onclick = "calculate()">Calculate BMI</button></td>
+		</tr>
+
+		<tr>
+			<td><h3>Results</h3></td>
+		</tr>
+		<tr>
+			<td>BMI</td>
+			<td><div id = "bmi"></div></td>
+		</tr>
+		<tr>
+			<td>Health Status</td>
+			<td><div id = "status"></div></td>
+		</tr>
+	</table>
+</body>
+</html>

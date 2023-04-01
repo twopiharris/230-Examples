@@ -1,0 +1,22 @@
+//Annotated Hello World
+//Simplest possible Java program
+//Andy Harris
+
+//class definition
+class Hello {
+
+
+    public static void main(String[] args){
+      //public - available to any program
+      //static - code can execute immediately
+      //void - code returns no value
+      //main - following code will run upon entry
+      //String[] - a list of text elements might appear here
+      //args - these will be any command-line arguments sent to the program
+
+        //print "Hi there" to the console
+	System.out.println("Hi there");
+    } // end main
+} // end class def
+
+

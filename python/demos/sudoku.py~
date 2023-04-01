@@ -1,0 +1,21 @@
+""" sudoku.py
+    generate a simple completed sudoku puzzle
+
+"""
+
+ROWS = 9
+COLS = 9
+
+puzzle = []
+
+def buildBlankPuzzle():
+  #generate blank puzzle
+  puzzle = []
+  for r in range(ROWS):
+    puzzle.append([])
+    for c in range(COLS):
+      puzzle[r].append(0)
+
+def showPuzzle():
+  for r in range 
+

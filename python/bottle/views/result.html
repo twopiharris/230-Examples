@@ -1,0 +1,28 @@
+<%
+
+from bottle import request
+temp = request.forms.get("temp")
+temp = int(temp)
+
+out = (temp - 32) * 5.0/9.0
+#convert to string with 2SD
+out = "{:.2f}".format(out)
+
+%>
+
+<!DOCTYPE html>
+<html lang = "en-us">
+<head>
+  <title>Conversion result</title>
+  <meta charset = "utf-8">
+</head>
+
+<body>
+  <h1>Result</h1>
+
+  <p>
+      Farenheit: {{ temp }} <br/ >
+      Celcius: {{ out }}
+  </p>
+</body>
+</html>

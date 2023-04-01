@@ -1,0 +1,65 @@
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>template for simple games</title>
+    <script type="text/javascript"
+            src = "http://www.aharrisbooks.net/h5g/h5g_5/simpleGame.js"></script>
+    <script type="text/javascript">
+        var scene;
+        var cow;
+		var pig;
+        
+		var cowVis = true;
+		var pigVis = true;
+		
+        function init(){
+            scene = new Scene();
+            cow = new Sprite(scene, "cow.svg", 130, 130);
+            pig = new Sprite(scene, "pig.svg", 130, 130);
+			
+			cow.setSpeed(0);
+			pig.setSpeed(0);
+			
+			pig.setPosition(400, 200);
+            scene.start();
+        } // end init
+        
+        function update(){
+            scene.clear();
+
+            //handle events here
+            checkKeys();
+            //update all the sprites
+            cow.update();
+			pig.update();
+        }
+		
+		function checkKeys(){
+			if (keysDown[K_P]){
+			  if (pigVis == true){
+				pigVis = false;
+				pig.hide();
+			  } else {
+			    pigVis = true;
+				pig.show();
+			  } // end if			
+			} // end p if
+		  if (keysDown[K_C]){
+			  
+			  if (cowVis == true){
+				cowVis = false;
+				cow.hide();
+			  } else {
+			    cowVis = true;
+				cow.show();
+			  } // end if
+		  }// end C if
+		} // end function
+    </script>
+</head>
+<body onload = "init()">
+    
+</body>
+</html>

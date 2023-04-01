@@ -1,0 +1,6 @@
+enable input / output
+create a text variable username
+ask user for her name
+store name in userName
+greet user including name
+

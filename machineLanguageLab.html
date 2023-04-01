@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+    <title>Assembly / Machine Language Lab</title>
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "http://www.cs.iupui.edu/~aharris/ajhStandard.css" />
+  </head>
+
+  <body>
+    <h1>Assembly / Machine Language Lab</h1>
+    <div class = "singlePanel">
+    <h2>Purpose</h2>
+    <p>
+      The purpose of this lab is to familiarize you with the
+      lower-level operations of a computer, specifically machine and
+      assembly language instructions.
+    </p>
+    
+    <h2>Introducing xMachine</h2>
+    <p>
+      We will use a simulated processor called 'xComputer' for experimentation.
+      This computer has a few advantages over a 'real' device:
+    </p>
+      <ul>
+        <li>It's written in Java so you can run it anywhere</li>
+        <li>It's a somewhat simplified architecture ideal for teaching</li>
+        <li>The language is an elegant and clear assembler variant</li>
+        <li>It uses a simple 16-bit architecture</li>
+        <li>It shows what's going on more clearly than a 'real' processor</li>
+        <li>It provides some error checking</li>
+        <li>It's safer than a real device, because it operates in a virtual machine</li>
+      </ul>
+    
+    <p>
+      xMachine was written by David Eck.  He has provided complete documentation and 
+      tutorials available here:
+    </p>
+      <ul>
+        <li><a href = "http://www.cs.iupui.edu/~aharris/n301/alg/tmcm-java-labs/labs/xComputerLab1.html">
+          xComputer 1</a></li>
+        <li><a href = "http://www.cs.iupui.edu/~aharris/n301/alg/tmcm-java-labs/labs/xComputerLab2.html">
+          xComputer 2</a></li>
+      </ul>
+    
+
+    <p>
+      The xMachine applet is available by clicking on this button:
+      <applet codebase="../n301/alg/tmcm-java-labs/classes/" archive="xComputer.zip" code="tmcm.xComputerLauncher.class" alt="(Java not enabled.)" height="30" width="150">
+        <param name="BASE" value="xComputerPrograms/" />
+        <param name="URL" value="CountAndStore.txt" />
+
+        <font color="#e70000">(Sorry, your browser doesn't do Java!)</font>
+      </applet>
+    </p>
+      
+    <h2>The Project</h2>
+    <p>
+      Create a multiplier in xMachine language. Consider the following factors:
+    </p>    
+      <ul>
+        <li>You'll need two inputs and an output</li>
+        <li>You may need some additional data cells</li>
+        <li>Think of the definition of multiplication</li>
+        <li>You'll probably need a loop</li>
+        <li>You can't assume the answer (eg it should work on any inputs)</li>
+      </ul>
+    
+    <h2>Turning it in</h2>
+    <p>
+      Copy and paste your code to a text document. Please be sure to add your name.
+      The following rubrik will be considered for grading:
+    </p>
+      <ul>
+        <li>Quality of the code (Does it work)</li>
+        <li>Code style (labels, indentation)</li>
+        <li>Completeness (Does it do all it needs to do)</li>
+      </ul>
+    <p>
+      Save your program as <em>name</em>ml.txt where <em>name</em> is your userID.
+    </p>
+    
+    <p>
+      Please submit in the provided oncourse dropBox.
+    </p>
+    </div>
+  </body>
+</html>

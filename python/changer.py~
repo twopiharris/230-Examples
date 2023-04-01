@@ -1,0 +1,28 @@
+""" changeMaker.py
+    get a price from user
+    and an amount paid.
+    determine how much change to give
+    break change into twenties, tens ... etc
+
+"""
+
+#get a price from the user
+price = raw_input("please tell me the price of the item: ")
+
+#get an amount paid from the user
+paid = raw_input("please tell me how much the user paid: ")
+
+#convert all values to pennies
+price = int(price) * 100
+paid = int(paid) * 100
+
+print "price: %d" % price
+print "paid: %d" % paid
+
+change = paid - price
+
+print "Change due: %d " % change
+
+twenties = change / 2000
+print "twenties: %d" % twenties
+change = change % 2000

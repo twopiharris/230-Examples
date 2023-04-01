@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8"/>
+	<title>e Maker</title>
+	<script type = "text/javascript">
+	
+	/*   NOTE TO STUDENTS
+     *   This code is an example for a homework assignment
+     *   it is written in JavaScript, which is NOT the same
+     *   language you are using.  If you turn in this code,
+     *
+     *   A)  It will not work
+     *   B)  We will know you are being dishonest
+     *
+     *   It's OK to use this code as a starting place,
+     *   but it's definitely easier to do it the way we ask in
+     *   class.
+     *   
+     *   I've deliberately not put the comments in here that
+     *   normally go in my code. I want you to try to do that
+     *   part yourself.
+     *
+     *   I've also not used meaningful variable names, to
+     *   discourage you from using this code yourself.
+     *   
+     *   Please see me or a recitation leader if you're
+     *   struggling...
+     *
+     *
+     *   -Andy
+     */
+	
+		function main() {
+			var g = document.getElementById("sample");
+			g.innerHTML = "Sample Run" + "<br/>\n";
+			
+			var keepGoing = true;
+			while (keepGoing) {
+				var a = prompt("Price of the item: ");
+				if (isNaN(a)) {
+					alert("Please input a number.");
+					keepGoing = true;
+				}//end if
+				else if (a < 0) {
+					alert("The price cannot be negative.")
+					keepGoing = true;
+				}//end else if
+				else if (!isNaN(a)) {
+					keepGoing = false;
+				}//end else if
+			}//end while
+			a = a * 100;
+			a = Math.ceil(a);
+			var z = document.getElementById("output");
+			z.innerHTML = "Price of the item: " + "<br/>\n" + (a / 100).toFixed(2) + "<br/>\n";
+			
+			var keepGoing = true;
+			while (keepGoing) {
+				var b = prompt("Cash tendered: ");
+				if (isNaN(b)) {
+					keepGoing = true;
+				}//end if
+				else if (b < 0) {
+					alert("You cannot pay negative money.");
+					keepGoing = true;
+				}//end else if
+				else if (!isNaN(b)) {
+					keepGoing = false;
+				}//end else if
+			}//end while
+			b = b * 100;
+			b = Math.ceil(b);
+			z.innerHTML += "Cash tendered: " + "<br/>\n" + (b / 100).toFixed(2) + "<br/>\n";
+			
+			var e = b - a;
+			if (e < 0) {
+				alert("Change cannnot be a negative number.")
+				z.innerHTML += "That's not enough money!" + "<br/>\n";
+			}//end if
+			else {
+				var d= e / 100;
+				z.innerHTML += "Change: " + "<br/>\n" + d.toFixed(2) + "<br/>\n";
+				z.innerHTML += "Change Left: " + "<br/>\n" + e + "<br/>\n";
+				
+				var p = Math.floor(e / 2000);
+				z.innerHTML += "Twenties: " + p + "<br/>\n";
+				e = (e % 2000);
+				
+				var r = Math.floor(e / 1000);
+				z.innerHTML += "Tens: " + r + "<br/>\n";
+				e = (e % 1000);
+				
+				var t = Math.floor(e / 500);
+				z.innerHTML += "Fives: " + t + "<br/>\n";
+				e = (e % 500);
+				
+				var q = Math.floor(e / 100);
+				z.innerHTML += "Ones: " + q + "<br/>\n";
+				e = (e % 100);
+				
+				var v = Math.floor(e / 25);
+				z.innerHTML += "Quarters: " + v + "<br/>\n";
+				e = (e % 25);
+				
+				var l = Math.floor(e / 10);
+				z.innerHTML += "Dimes: " + l + "<br/>\n";
+				e = (e % 10);
+				
+				var y = Math.floor(e / 5);
+				z.innerHTML += "Nickels: " + y + "<br/>\n";
+				e = (e % 5);
+				
+				var k = Math.floor(e / 1);
+				z.innerHTML += "Pennies: " + k + "<br/>\n";
+			}//end else
+		}//end main
+	</script>
+</head>
+<body>
+	<h1>Change Maker</h1>
+	
+	<button type = "button" onclick = "main()">begin</button>
+	
+	<p>
+    Press the button to see an example of the change maker assignment.
+    This example will work much like the one in class but it is written
+    in a different language.
+	</p>
+  
+	<p>
+    Note that in JavaScript, we're using dialog boxes for input and
+    output because this is not a command-line driven language (at
+    least not in the way it's being used here).  Your code does NOT
+    need to use pop-up dialogs.  Command-line I/O is fine.
+	</p>
+  
+	<p>
+    Please try to build this algorithm on your own. I know it is
+    not difficult to see actual JavaScript code, but I have written
+    this example in a far more obtuse style than I normally use.
+    It will be far easier to build this algorithm up and then implement
+    in Python than it will be to reverse engineer my JS code.
+	</p>
+	
+	<h2 id = "sample"></h2>
+	
+	<div id = "output"></div>
+</body>
+</html>

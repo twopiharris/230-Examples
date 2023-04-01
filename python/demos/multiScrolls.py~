@@ -1,0 +1,20 @@
+""" multiScrolls.py
+    Demonstrate three scroll bars add to 100
+    change top scroll, bottom two change 
+    proportionately """
+
+from Tkinter import *
+
+class App(Tk):
+  def __init__(self):
+    Tk.__init__(self)
+    self.scrA = Scale(self, from_ = 0, to = 100)
+    self.scrA.grid()
+
+    self.mainloop()
+
+def main():
+  app = App()
+
+if __name__ == "__main__":
+  main()

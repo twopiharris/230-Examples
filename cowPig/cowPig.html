@@ -1,0 +1,146 @@
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Cow and Pig</title>
+    <script type="text/javascript"
+            src = "simpleGame.js"></script>
+    <script type="text/javascript">
+      /* cowPig.  Used to demonstrate basic Boolean logic
+         Uses SimpleGame.js
+         By Andy Harris, Fall 2015
+         Graphics creative commons from openClipart.org.
+      */
+
+
+      var scene;
+      var cow;
+      var pig;
+      var farm;
+
+      var cowVis = true;
+      var pigVis = true;
+      var K_SHIFT = 16;
+
+      function init(){
+        scene = new Scene();
+        cow = new Sprite(scene, "cow.svg", 300, 300);
+        pig = new Sprite(scene, "pig.svg", 300, 300);
+        farm = new Sprite(scene, "farm.svg", 800, 600);
+
+	cow.setSpeed(0);
+	pig.setSpeed(0);
+        farm.setSpeed(0);
+			
+        cow.setPosition(200, 300);
+	pig.setPosition(600, 300);
+        farm.setPosition(400, 300);
+
+        scene.start();
+      } // end init
+        
+      function update(){
+        scene.clear();
+
+        //handle events here
+        checkKeys();
+
+        //update all the sprites
+        farm.update();
+        cow.update();
+	pig.update();
+      }
+		
+      function checkKeys(){
+        //C shows cow shift C hides it
+        if (keysDown[K_C]){
+          if (keysDown[K_SHIFT]){
+            cow.hide();
+          } else {
+            cow.show();
+          } // end shift if
+        } // end C if
+	
+        //P shows pig, shift P hides it
+        if (keysDown[K_P]){
+          if (keysDown[K_SHIFT]){
+            pig.hide();
+          } else {
+            pig.show();
+          } // end shift if
+        } // end P if
+
+
+        //binary shortcuts
+        if (keysDown[K_0]){
+          cow.hide();
+          pig.hide();
+        } // end if
+
+        if (keysDown[K_1]){
+          cow.hide();
+          pig.show();
+        } // end if
+
+        if (keysDown[K_2]){
+          cow.show();
+          pig.hide();
+        } // end if
+
+         if (keysDown[K_3]){
+          cow.show();
+          pig.show();
+        } // end if
+               
+      } // end checkKeys
+
+      function toggleCow(){
+        if (cow.visible){
+          cow.hide();
+        } else {
+          cow.show();
+        } // end if
+      } // end toggleCow
+
+      function togglePig(){
+        if (pig.visible){
+          pig.hide();
+        } else {
+          pig.show();
+        } // end if
+      } // end togglePig
+
+    </script>
+    <style type = "text/css">
+      #instructions {
+        background-color: white;
+        position: absolute;
+        left: 200px;
+        top: 500px;
+        z-index:100;
+        font-size: 2em;
+        text-align: center;
+        width: 500px;
+        border: 3px solid black;
+      }
+    </style>
+</head>
+<body onload = "init()">
+<div id = "instructions">
+C shows cow, Shift-C hides cow <br />
+P shows pig, Shift-P hides pig <br />
+0-3 quick keys
+</div>
+
+<button type = "button"
+        onclick = "toggleCow()">
+  cow
+</button>
+<button type = "button"
+        onclick = "togglePig()">
+  pig
+</button>
+
+</body>
+</html>

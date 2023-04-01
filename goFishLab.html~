@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC 
+"-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang = "EN" xml:lang = "EN" dir = "ltr">
+<head>
+<meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+
+<link rel = "stylesheet"
+      type = "text/css"
+      href = "../ajhStandard.css" />
+
+<title>Go Fish (arrays) Lab</title>
+</head>
+
+<body>
+<h1>Go Fish (arrays) Lab</h1> 
+
+
+<h2>Objective</h2>
+
+<p>
+The objective of this lab is to create the beginnings for a java-based
+ go-fish game. We DO NOT expect a fully functioning go-fish game.
+ What we do expect is that you create a main function and various
+ methods that will accomplish the following goals:
+</p>
+
+<ul>
+  <li> Create variables representing the POND, the PLAYER and the COMPUTER
+       <br />
+       (Hint: you may want to declare these as <b>final ints</b> and initialize them to 0, 1 and 2 respectivley.  You could use these values later in your 
+ program to indicate if a card is located in the POND or in the hand of the PLAYER or COMPUTER)
+  </li>
+  <li> Place all cards in the deck into the pond (indicate that all cards are located in the pond) </li>
+  <li> Get a card from the pond and place it in the user's or computer's hand (find a card in the pond and indicate that it is now in the hand of the user or the computer)
+  </li> 
+  <li> Show the cards that are in the deck (we want to see all 52 cards with their suit and rank) 
+       <br />
+       See the hint regarding getCardName() </li>
+  <li> Show the cards that are in the hands of the PLAYER and COMPUTER </li>
+</ul>
+
+
+
+<h2>Hints</h2>
+
+<ul>
+   <li>You can implement this lab without the use of two-dimensional arrays</li>
+   <li>It may be easier to create a getCardName() method to determine the card name from
+ the position in the deck.  This function will be very familiar if you remember
+ the change-maker lab </li>
+
+</ul>
+<br />
+<br /> 
+<h2>Given Code </h2>
+<pre>
+public class GoFish {
+  public static int[] deck = [insert code here]
+  
+  public static String[] suitName = [insert code here]
+  public static String[] rankName = [insert code here]
+  
+  
+  public static final int POND = 0;
+  public static final int PLAYER = 1;
+  public static final int COMP = 2;
+  
+  public static void main(String[] args) {
+    clearDeck();
+    for (int i = 0; i &lt; 5; i++){
+      getCard(PLAYER);
+      getCard(COMP);
+    } // end for loop
+    showDeck();
+  
+    showHand(PLAYER);
+    showHand(COMP);
+  
+  } // end main
+} // end class def
+
+</pre>
+
+<h2>Sample output</h2>
+<pre>
+0) Ace of Spades: 0
+1) Ace of Hearts: 0
+2) Ace of Clubs: 0
+3) Ace of Diamonds: 0
+4) Two of Spades: 0
+5) Two of Hearts: 1
+6) Two of Clubs: 0
+7) Two of Diamonds: 0
+8) Three of Spades: 0
+9) Three of Hearts: 0
+10) Three of Clubs: 0
+11) Three of Diamonds: 0
+12) Four of Spades: 0
+13) Four of Hearts: 0
+14) Four of Clubs: 0
+15) Four of Diamonds: 0
+16) Five of Spades: 0
+17) Five of Hearts: 1
+18) Five of Clubs: 0
+19) Five of Diamonds: 2
+20) Six of Spades: 0
+21) Six of Hearts: 0
+22) Six of Clubs: 0
+23) Six of Diamonds: 0
+24) Seven of Spades: 0
+25) Seven of Hearts: 0
+26) Seven of Clubs: 2
+27) Seven of Diamonds: 1
+28) Eight of Spades: 0
+29) Eight of Hearts: 0
+30) Eight of Clubs: 0
+31) Eight of Diamonds: 2
+32) Nine of Spades: 0
+33) Nine of Hearts: 0
+34) Nine of Clubs: 0
+35) Nine of Diamonds: 0
+36) Ten of Spades: 0
+37) Ten of Hearts: 1
+38) Ten of Clubs: 0
+39) Ten of Diamonds: 0
+40) Jack of Spades: 0
+41) Jack of Hearts: 0
+42) Jack of Clubs: 2
+43) Jack of Diamonds: 0
+44) Queen of Spades: 0
+45) Queen of Hearts: 1
+46) Queen of Clubs: 0
+47) Queen of Diamonds: 0
+48) King of Spades: 0
+49) King of Hearts: 2
+50) King of Clubs: 0
+51) King of Diamonds: 0
+
+Two of Hearts
+Five of Hearts
+Seven of Diamonds
+Ten of Hearts
+Queen of Hearts
+
+Five of Diamonds
+Seven of Clubs
+Eight of Diamonds
+Jack of Clubs
+King of Hearts
+
+</pre>
+<h2>Blackbelt</h2>
+
+<p>
+Use what you have created and extend it to actually implement a
+working go-fish game.  If go fish isn't your favorite game, you can
+tranfer what you have created to make several other popular card games
+such as war or blackjack.
+</p>
+</body>
+</html>
+

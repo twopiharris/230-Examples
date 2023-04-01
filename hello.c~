@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main(){
+  char[20] userName;
+  printf("What is your name?");
+  scanf("%s", userName);
+  printf("Hi there, %s!", userName);
+  return(0);
+} // end main
+

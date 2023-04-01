@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+    <link rel = "stylesheet"
+          type = "text/css"
+          href = "http://www.cs.iupui.edu/~aharris/ajhStandard.css" />
+    <style type = "text/css">
+      body {
+        background-image: url("bg.png");
+      }
+      
+      table {
+        margin-left: auto;
+        margin-right: auto;
+        border: 5px inset #DDDDAA;
+        margin-bottom: 1em;
+      }
+
+      td, th{
+        border: 1px solid black;
+      }
+
+    </style>      
+    <title>CSCI 230</title>
+  </head>
+
+  <body>
+    <h1>CSCI 230</h1>
+    <div class = "singlePanel">    
+    <h2>General Schedule</h2>
+    
+    <table>
+      <tr>
+        <th>Week</th>
+        <th>Topic</th>
+        <th>Reading</th>
+        <th>Assignment</th>
+      </tr>
+      
+      <tr>
+        <td>1</td>
+        <td>Integer Representation</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>Floating Points and Characters</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>Instructions / Machine language</td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+      <tr>
+        <td>4</td>
+        <td>First Java Program</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>5</td>
+        <td>Branching Operations</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>6</td>
+        <td>Looping Operations</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>7</td>
+        <td>Arrays</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>8</td>
+        <td>Midterm</td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+      <tr>
+        <td>9</td>
+        <td>Methods and Parameters</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>10</td>
+        <td>Basic OOP</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>11</td>
+        <td>Access Modifiers</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>12</td>
+        <td>Moving to Swing</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>13</td>
+        <td>Event-handling</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>14</td>
+        <td>Layout Managers</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>15</td>
+        <td>Final Project</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+    </table>
+    </div>
+  </body>
+</html>

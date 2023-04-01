@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>Binary light switch demo</title>
+<!-- import gamelib modules -->
+
+<script src = "gamelib_core.js"></script>
+<script src = "gamelib_mouse.js"></script>
+<script src = "gamelib_sprites.js"></script>
+
+<script>
+  var ltSwitch = new Array(3);
+  var bulb = new Array(3);
+  var lyrValue = new Array(3);
+  var lyrMessage = new Array(3);
+  var bulbValue = new Array(3);
+  var showHide = new Array(3);
+
+  var theMouse;
+
+function init(){
+
+  //initialize mouse
+  theMouse = Ms_initmouse();
+
+  Sp_xoffset = 200;
+
+
+  for(i = 0; i < 3; i++){
+    //set up sprites
+   
+    bulbValue[i] = 0;
+
+    bulb[i] = new Sp_Sprite();
+    bulb[i].setImage("lights.gif", 110, 145, 2, 2);
+    bulb[i].setXlimits(0, 800);
+    bulb[i].setYlimits(0, 800);
+    bulb[i].moveTo(150 * i, 50);
+    bulb[i].setFrame(1);
+    bulb[i].setAnimation(bulbValue[i]);
+    bulb[i].switchOn();
+  
+    ltSwitch[i] = new Sp_Sprite();
+    ltSwitch[i].setImage("lights.gif", 110, 145, 2, 2);
+    ltSwitch[i].setXlimits(0, 800);
+    ltSwitch[i].setYlimits(0, 800);
+    ltSwitch[i].moveTo((150 * i), 250);
+    ltSwitch[i].setFrame(0);
+    ltSwitch[i].setAnimation(bulbValue[i]);
+    ltSwitch[i].switchOn();
+    ltSwitch[i].onclickdown = "changeLight(" + i + ")";
+  
+    showHide[i] = new Sp_Sprite();
+    showHide[i].setImage("showHide.gif", 100, 50, 1, 1);
+    showHide[i].setXlimits(0, 800);
+    showHide[i].setYlimits(0, 800);
+    showHide[i].moveTo((150 * i), 550);
+    showHide[i].setFrame(0);
+    showHide[i].setAnimation(0);
+    showHide[i].switchOn();
+    showHide[i].onclickdown = "showUnshow(" + i + ")";
+ 
+    //set up layers
+    lyrValue[i] = new 
+      Gl_layer((150 * i)+ Sp_xoffset+ 50, 450, 450, "<font color = white size = 7>0</font>");
+    lyrValue[i].show();
+  
+  } // end for loop
+
+  lyrTotal = new Gl_layer(0, 0, 100, "<font color = white>0</font>");
+  lyrTotal.show(); 
+
+ Gl_start();
+
+} // end init
+
+function sayHi(){
+  alert("Hi!");
+} //
+
+
+function changeLight(switchNum){
+  //changes light switch and bulb status when user
+  //clicks on a switch
+
+  if (bulbValue[switchNum] == 1){
+    bulbValue[switchNum] = 0 ;
+  } else {
+    bulbValue[switchNum] = 1;
+  } // end if    
+  
+  //change sprites according to bulbValue
+  ltSwitch[switchNum].setAnimation(bulbValue[switchNum]);
+  bulb[switchNum].setAnimation(bulbValue[switchNum]);
+  showValue(switchNum, bulbValue[switchNum]);
+  calcValue();
+
+} // end changeLight
+
+function showValue(switchNum, newVal){
+  //shows an appropriate value in the value layer
+  var output = "<font color = white size = 7>";
+  output += newVal; 
+  output += "</font>";
+  lyrValue[switchNum].write(output);
+} // end showValue
+
+function showUnshow(switchNum){
+  if (bulb[switchNum].on){
+
+    //turn off light, if it's currently on
+    if (bulbValue[switchNum] == 1){
+      alert("the light is on");
+      changeLight(switchNum);
+    } // end 'light is on' if
+
+    bulb[switchNum].switchOff();
+    ltSwitch[switchNum].switchOff();
+    showValue(switchNum, "");
+
+  } else {
+    bulb[switchNum].switchOn();
+    ltSwitch[switchNum].switchOn();
+    showValue(switchNum, bulbValue[switchNum]);
+  } // end if
+} // end showUnshow
+
+function calcValue(){
+  //calculates the decimal value of current switches
+  var total = 0;
+  total += (bulbValue[2] * 1);
+  total += (bulbValue[1] * 2);
+  total += (bulbValue[0] * 4);
+
+  var output = "<font color = white size = 7>"
+  output += total;
+  output += "</font>";
+  lyrTotal.write(output);
+
+} // end calcValue
+
+</script>
+
+</head>
+
+<body bgColor = "black"
+      onload = "init()">
+<font color = "White">
+<center>
+<h1>Binary Light Switch Demo</h1>
+</center>
+
+</font>
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+""" changerTuple """
+
+penniesLeft = 1234
+
+currency = (
+  ("twenties", 2000),
+  ("tens", 1000),
+  ("fives", 500)
+)
+
+
+for line in currency:
+  (denom, value) = line
+  print({}: {}).format(denom, value)
+
+
+
